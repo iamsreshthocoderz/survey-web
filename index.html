@@ -780,6 +780,15 @@ var qrcode=function(){function i(t,r){function a(t,r){g=function(t){for(var r=ne
           .then(function (d) {
             if (!d || !d.ok) { setSharedBadge(false); return; }
             setSharedBadge(true);
+            /* Deleted codes stay deleted: drop them (and their answers,
+               incl. the SRV-001 seed + its sample rows) even though the
+               seed is hardcoded in the page. */
+            (d.deleted || []).forEach(function (c) {
+              var dc = String(c || "").trim().toUpperCase();
+              if (!dc) return;
+              surveys = surveys.filter(function (x) { return x.code !== dc; });
+              responses = responses.filter(function (r) { return r.surveyCode !== dc && !(r.surveyId === "s1" && dc === "SRV-001"); });
+            });
             var newDefs = 0;
             (d.surveys || []).forEach(function (def) {
               if (!surveyByCode(def.code)) { addSharedSurvey(def); newDefs++; }
@@ -940,6 +949,17 @@ var qrcode=function(){function i(t,r){function a(t,r){g=function(t){for(var r=ne
       var s = surveyById(pendingDeleteId);
       if (!s) { closeDelete(); return; }
       var title = s.title;
+      var delCode = s.code;
+      /* Delete from the shared backend too — otherwise the next reload
+         pulls the survey and its answers back from Upstash and it
+         "comes back". The backend records the code as deleted so the
+         hardcoded SRV-001 seed cannot resurrect either. */
+      try {
+        if (typeof fetch === "function" && delCode) {
+          fetch("/api/survey?code=" + encodeURIComponent(delCode), { method: "DELETE" }).catch(function () {});
+          fetch("/api/responses?code=" + encodeURIComponent(delCode), { method: "DELETE" }).catch(function () {});
+        }
+      } catch (e) {}
       surveys = surveys.filter(function (x) { return x.id !== pendingDeleteId; });
       responses = responses.filter(function (r) { return r.surveyId !== pendingDeleteId; });
       if (editingId === pendingDeleteId) { editingId = null; }
