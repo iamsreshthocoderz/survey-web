@@ -3,6 +3,11 @@
    opened from the share link on any other phone.
    POST /api/survey { survey: { id, code, title, desc, sections } }
      -> saves the definition, answers { ok:true, stored:true, code }.
+   DELETE /api/survey?code=SRV-002
+     -> deletes the definition AND its responses AND removes the code
+        from the codes set, and records the code in survey:deleted so a
+        reload can never resurrect it (the SRV-001 seed is hardcoded in
+        the page, so without this tombstone it would always come back).
    GET /api/survey?code=SRV-001 -> { ok:true, survey } or
      { ok:false, reason:"not_found", survey:null }.
    Env vars (Vercel dashboard only, never in code): KV_REST_API_URL / UPSTASH_REDIS_REST_URL,
@@ -60,6 +65,23 @@ module.exports = async function (req, res) {
       await kvCall(url, token, "/set/survey:def:" + code + "/" + encodeURIComponent(JSON.stringify(def)), "POST");
       await kvCall(url, token, "/sadd/survey:codes/" + encodeURIComponent(code), "POST");
       res.status(200).json({ ok: true, stored: true, code: code });
+    } catch (e) {
+      res.status(200).json({ ok: false, reason: "backend_error" });
+    }
+    return;
+  }
+  if (req.method === "DELETE") {
+    var delCode = cleanCode((req.query && req.query.code) || "");
+    if (!delCode) {
+      res.status(400).json({ ok: false, reason: "bad_request" });
+      return;
+    }
+    try {
+      await kvCall(url, token, "/del/survey:def:" + delCode, "POST");
+      await kvCall(url, token, "/del/survey:responses:" + delCode, "POST");
+      await kvCall(url, token, "/srem/survey:codes/" + encodeURIComponent(delCode), "POST");
+      await kvCall(url, token, "/sadd/survey:deleted/" + encodeURIComponent(delCode), "POST");
+      res.status(200).json({ ok: true, deleted: true, code: delCode });
     } catch (e) {
       res.status(200).json({ ok: false, reason: "backend_error" });
     }

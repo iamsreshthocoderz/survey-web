@@ -9,9 +9,9 @@ function cleanCode(v) {
   return String(v || "").trim().toUpperCase().replace(/[^A-Z0-9-]/g, "").slice(0, 32);
 }
 
-function kvCall(url, token, path) {
+function kvCall(url, token, path, method) {
   return fetch(url.replace(/\/+$/, "") + path, {
-    method: "GET",
+    method: method || "GET",
     headers: { Authorization: "Bearer " + token }
   }).then(function (r) {
     return r.json().catch(function () { return {}; });
@@ -39,7 +39,7 @@ async function readOne(url, token, code) {
 
 module.exports = async function (req, res) {
   res.setHeader("Content-Type", "application/json");
-  if (req.method !== "GET") {
+  if (req.method !== "GET" && req.method !== "DELETE") {
     res.status(405).json({ ok: false, reason: "method_not_allowed" });
     return;
   }
@@ -49,10 +49,31 @@ module.exports = async function (req, res) {
     res.status(200).json({ ok: false, reason: "backend_not_configured", responses: [], surveys: [] });
     return;
   }
+  if (req.method === "DELETE") {
+    var delCode = cleanCode((req.query && req.query.code) || "");
+    if (!delCode) {
+      res.status(400).json({ ok: false, reason: "bad_request" });
+      return;
+    }
+    try {
+      await kvCall(url, token, "/del/survey:responses:" + delCode, "POST");
+      await kvCall(url, token, "/del/survey:def:" + delCode, "POST");
+      await kvCall(url, token, "/srem/survey:codes/" + encodeURIComponent(delCode), "POST");
+      await kvCall(url, token, "/sadd/survey:deleted/" + encodeURIComponent(delCode), "POST");
+      res.status(200).json({ ok: true, deleted: true, code: delCode });
+    } catch (e) {
+      res.status(200).json({ ok: false, reason: "backend_error" });
+    }
+    return;
+  }
   var code = cleanCode((req.query && req.query.code) || "");
   try {
     if (code === "ALL") {
       var codes = await kvCall(url, token, "/smembers/survey:codes") || [];
+      var deleted = await kvCall(url, token, "/smembers/survey:deleted") || [];
+      var deletedSet = {};
+      deleted.forEach(function (c) { deletedSet[cleanCode(c)] = 1; });
+      codes = codes.filter(function (c) { return !deletedSet[cleanCode(c)]; });
       var surveys = [];
       var responses = [];
       var list = codes.slice(0, 50);
@@ -63,11 +84,16 @@ module.exports = async function (req, res) {
         if (one.survey) surveys.push(one.survey);
         responses = responses.concat(one.responses);
       }
-      res.status(200).json({ ok: true, codes: codes, surveys: surveys, responses: responses });
+      res.status(200).json({ ok: true, codes: codes, deleted: deleted, surveys: surveys, responses: responses });
       return;
     }
     if (!code) {
       res.status(400).json({ ok: false, reason: "bad_request", responses: [], surveys: [] });
+      return;
+    }
+    var isDeleted = await kvCall(url, token, "/sismember/survey:deleted/" + encodeURIComponent(code)).catch(function () { return 0; });
+    if (isDeleted) {
+      res.status(200).json({ ok: false, reason: "deleted", surveyCode: code, survey: null, surveys: [], responses: [] });
       return;
     }
     var single = await readOne(url, token, code);
