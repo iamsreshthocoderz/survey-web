@@ -1,0 +1,1562 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>AI Survey Software — Public Link</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+    <script>
+/* QR code generator — Kazuhiko Arase, MIT License (inlined so the QR always renders) */
+var qrcode=function(){function i(t,r){function a(t,r){g=function(t){for(var r=new Array(t),e=0;e<t;e+=1){r[e]=new Array(t);for(var n=0;n<t;n+=1)r[e][n]=null}return r}(l=4*u+17),e(0,0),e(l-7,0),e(0,l-7),i(),o(),v(t,r),7<=u&&h(t),null==n&&(n=w(u,f,c)),d(n,r)}var u=t,f=y[r],g=null,l=0,n=null,c=[],s={},e=function(t,r){for(var e=-1;e<=7;e+=1)if(!(t+e<=-1||l<=t+e))for(var n=-1;n<=7;n+=1)r+n<=-1||l<=r+n||(g[t+e][r+n]=0<=e&&e<=6&&(0==n||6==n)||0<=n&&n<=6&&(0==e||6==e)||2<=e&&e<=4&&2<=n&&n<=4)},o=function(){for(var t=8;t<l-8;t+=1)null==g[t][6]&&(g[t][6]=t%2==0);for(var r=8;r<l-8;r+=1)null==g[6][r]&&(g[6][r]=r%2==0)},i=function(){for(var t=B.getPatternPosition(u),r=0;r<t.length;r+=1)for(var e=0;e<t.length;e+=1){var n=t[r],o=t[e];if(null==g[n][o])for(var i=-2;i<=2;i+=1)for(var a=-2;a<=2;a+=1)g[n+i][o+a]=-2==i||2==i||-2==a||2==a||0==i&&0==a}},h=function(t){for(var r=B.getBCHTypeNumber(u),e=0;e<18;e+=1){var n=!t&&1==(r>>e&1);g[Math.floor(e/3)][e%3+l-8-3]=n}for(e=0;e<18;e+=1){n=!t&&1==(r>>e&1);g[e%3+l-8-3][Math.floor(e/3)]=n}},v=function(t,r){for(var e=f<<3|r,n=B.getBCHTypeInfo(e),o=0;o<15;o+=1){var i=!t&&1==(n>>o&1);o<6?g[o][8]=i:o<8?g[o+1][8]=i:g[l-15+o][8]=i}for(o=0;o<15;o+=1){i=!t&&1==(n>>o&1);o<8?g[8][l-o-1]=i:o<9?g[8][15-o-1+1]=i:g[8][15-o-1]=i}g[l-8][8]=!t},d=function(t,r){for(var e=-1,n=l-1,o=7,i=0,a=B.getMaskFunction(r),u=l-1;0<u;u-=2)for(6==u&&(u-=1);;){for(var f=0;f<2;f+=1)if(null==g[n][u-f]){var c=!1;i<t.length&&(c=1==(t[i]>>>o&1)),a(n,u-f)&&(c=!c),g[n][u-f]=c,-1==(o-=1)&&(i+=1,o=7)}if((n+=e)<0||l<=n){n-=e,e=-e;break}}},w=function(t,r,e){for(var n=b.getRSBlocks(t,r),o=M(),i=0;i<e.length;i+=1){var a=e[i];o.put(a.getMode(),4),o.put(a.getLength(),B.getLengthInBits(a.getMode(),t)),a.write(o)}var u=0;for(i=0;i<n.length;i+=1)u+=n[i].dataCount;if(o.getLengthInBits()>8*u)throw"code length overflow. ("+o.getLengthInBits()+">"+8*u+")";for(o.getLengthInBits()+4<=8*u&&o.put(0,4);o.getLengthInBits()%8!=0;)o.putBit(!1);for(;!(o.getLengthInBits()>=8*u||(o.put(236,8),o.getLengthInBits()>=8*u));)o.put(17,8);return function(t,r){for(var e=0,n=0,o=0,i=new Array(r.length),a=new Array(r.length),u=0;u<r.length;u+=1){var f=r[u].dataCount,c=r[u].totalCount-f;n=Math.max(n,f),o=Math.max(o,c),i[u]=new Array(f);for(var g=0;g<i[u].length;g+=1)i[u][g]=255&t.getBuffer()[g+e];e+=f;var l=B.getErrorCorrectPolynomial(c),h=C(i[u],l.getLength()-1).mod(l);a[u]=new Array(l.getLength()-1);for(g=0;g<a[u].length;g+=1){var s=g+h.getLength()-a[u].length;a[u][g]=0<=s?h.getAt(s):0}}var v=0;for(g=0;g<r.length;g+=1)v+=r[g].totalCount;var d=new Array(v),w=0;for(g=0;g<n;g+=1)for(u=0;u<r.length;u+=1)g<i[u].length&&(d[w]=i[u][g],w+=1);for(g=0;g<o;g+=1)for(u=0;u<r.length;u+=1)g<a[u].length&&(d[w]=a[u][g],w+=1);return d}(o,n)};s.addData=function(t,r){var e=null;switch(r=r||"Byte"){case"Numeric":e=x(t);break;case"Alphanumeric":e=m(t);break;case"Byte":e=L(t);break;case"Kanji":e=D(t);break;default:throw"mode:"+r}c.push(e),n=null},s.isDark=function(t,r){if(t<0||l<=t||r<0||l<=r)throw t+","+r;return g[t][r]},s.getModuleCount=function(){return l},s.make=function(){if(u<1){for(var t=1;t<40;t++){for(var r=b.getRSBlocks(t,f),e=M(),n=0;n<c.length;n++){var o=c[n];e.put(o.getMode(),4),e.put(o.getLength(),B.getLengthInBits(o.getMode(),t)),o.write(e)}var i=0;for(n=0;n<r.length;n++)i+=r[n].dataCount;if(e.getLengthInBits()<=8*i)break}u=t}a(!1,function(){for(var t=0,r=0,e=0;e<8;e+=1){a(!0,e);var n=B.getLostPoint(s);(0==e||n<t)&&(t=n,r=e)}return r}())},s.createTableTag=function(t,r){t=t||2;var e="";e+='<table style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: "+(r=void 0===r?4*t:r)+"px;",e+='">',e+="<tbody>";for(var n=0;n<s.getModuleCount();n+=1){e+="<tr>";for(var o=0;o<s.getModuleCount();o+=1)e+='<td style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: 0px;",e+=" width: "+t+"px;",e+=" height: "+t+"px;",e+=" background-color: ",e+=s.isDark(n,o)?"#000000":"#ffffff",e+=";",e+='"/>';e+="</tr>"}return e+="</tbody>",e+="</table>"},s.createSvgTag=function(t,r,e,n){var o={};"object"==typeof t&&(t=(o=t).cellSize,r=o.margin,e=o.alt,n=o.title),t=t||2,r=void 0===r?4*t:r,(e="string"==typeof e?{text:e}:e||{}).text=e.text||null,e.id=e.text?e.id||"qrcode-description":null,(n="string"==typeof n?{text:n}:n||{}).text=n.text||null,n.id=n.text?n.id||"qrcode-title":null;var i,a,u,f,c=s.getModuleCount()*t+2*r,g="";for(f="l"+t+",0 0,"+t+" -"+t+",0 0,-"+t+"z ",g+='<svg version="1.1" xmlns="http://www.w3.org/2000/svg"',g+=o.scalable?"":' width="'+c+'px" height="'+c+'px"',g+=' viewBox="0 0 '+c+" "+c+'" ',g+=' preserveAspectRatio="xMinYMin meet"',g+=n.text||e.text?' role="img" aria-labelledby="'+p([n.id,e.id].join(" ").trim())+'"':"",g+=">",g+=n.text?'<title id="'+p(n.id)+'">'+p(n.text)+"</title>":"",g+=e.text?'<description id="'+p(e.id)+'">'+p(e.text)+"</description>":"",g+='<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>',g+='<path d="',a=0;a<s.getModuleCount();a+=1)for(u=a*t+r,i=0;i<s.getModuleCount();i+=1)s.isDark(a,i)&&(g+="M"+(i*t+r)+","+u+f);return g+='" stroke="transparent" fill="black"/>',g+="</svg>"},s.createDataURL=function(o,t){o=o||2,t=void 0===t?4*o:t;var r=s.getModuleCount()*o+2*t,i=t,a=r-t;return I(r,r,function(t,r){if(i<=t&&t<a&&i<=r&&r<a){var e=Math.floor((t-i)/o),n=Math.floor((r-i)/o);return s.isDark(n,e)?0:1}return 1})},s.createImgTag=function(t,r,e){t=t||2,r=void 0===r?4*t:r;var n=s.getModuleCount()*t+2*r,o="";return o+="<img",o+=' src="',o+=s.createDataURL(t,r),o+='"',o+=' width="',o+=n,o+='"',o+=' height="',o+=n,o+='"',e&&(o+=' alt="',o+=p(e),o+='"'),o+="/>"};var p=function(t){for(var r="",e=0;e<t.length;e+=1){var n=t.charAt(e);switch(n){case"<":r+="&lt;";break;case">":r+="&gt;";break;case"&":r+="&amp;";break;case'"':r+="&quot;";break;default:r+=n}}return r};return s.createASCII=function(t,r){if((t=t||1)<2)return function(t){t=void 0===t?2:t;var r,e,n,o,i,a=1*s.getModuleCount()+2*t,u=t,f=a-t,c={"██":"█","█ ":"▀"," █":"▄","  ":" "},g={"██":"▀","█ ":"▀"," █":" ","  ":" "},l="";for(r=0;r<a;r+=2){for(n=Math.floor((r-u)/1),o=Math.floor((r+1-u)/1),e=0;e<a;e+=1)i="█",u<=e&&e<f&&u<=r&&r<f&&s.isDark(n,Math.floor((e-u)/1))&&(i=" "),u<=e&&e<f&&u<=r+1&&r+1<f&&s.isDark(o,Math.floor((e-u)/1))?i+=" ":i+="█",l+=t<1&&f<=r+1?g[i]:c[i];l+="\n"}return a%2&&0<t?l.substring(0,l.length-a-1)+Array(1+a).join("▀"):l.substring(0,l.length-1)}(r);t-=1,r=void 0===r?2*t:r;var e,n,o,i,a=s.getModuleCount()*t+2*r,u=r,f=a-r,c=Array(t+1).join("██"),g=Array(t+1).join("  "),l="",h="";for(e=0;e<a;e+=1){for(o=Math.floor((e-u)/t),h="",n=0;n<a;n+=1)i=1,u<=n&&n<f&&u<=e&&e<f&&s.isDark(o,Math.floor((n-u)/t))&&(i=0),h+=i?c:g;for(o=0;o<t;o+=1)l+=h+"\n"}return l.substring(0,l.length-1)},s.renderTo2dContext=function(t,r){r=r||2;for(var e=s.getModuleCount(),n=0;n<e;n++)for(var o=0;o<e;o++)t.fillStyle=s.isDark(n,o)?"black":"white",t.fillRect(n*r,o*r,r,r)},s}i.stringToBytes=(i.stringToBytesFuncs={default:function(t){for(var r=[],e=0;e<t.length;e+=1){var n=t.charCodeAt(e);r.push(255&n)}return r}}).default,i.createStringToBytes=function(u,f){var i=function(){function t(){var t=r.read();if(-1==t)throw"eof";return t}for(var r=S(u),e=0,n={};;){var o=r.read();if(-1==o)break;var i=t(),a=t()<<8|t();n[String.fromCharCode(o<<8|i)]=a,e+=1}if(e!=f)throw e+" != "+f;return n}(),a="?".charCodeAt(0);return function(t){for(var r=[],e=0;e<t.length;e+=1){var n=t.charCodeAt(e);if(n<128)r.push(n);else{var o=i[t.charAt(e)];"number"==typeof o?(255&o)==o?r.push(o):(r.push(o>>>8),r.push(255&o)):r.push(a)}}return r}};var r,t,a=1,u=2,o=4,f=8,y={L:1,M:0,Q:3,H:2},e=0,n=1,c=2,g=3,l=4,h=5,s=6,v=7,B=(r=[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],(t={}).getBCHTypeInfo=function(t){for(var r=t<<10;0<=d(r)-d(1335);)r^=1335<<d(r)-d(1335);return 21522^(t<<10|r)},t.getBCHTypeNumber=function(t){for(var r=t<<12;0<=d(r)-d(7973);)r^=7973<<d(r)-d(7973);return t<<12|r},t.getPatternPosition=function(t){return r[t-1]},t.getMaskFunction=function(t){switch(t){case e:return function(t,r){return(t+r)%2==0};case n:return function(t,r){return t%2==0};case c:return function(t,r){return r%3==0};case g:return function(t,r){return(t+r)%3==0};case l:return function(t,r){return(Math.floor(t/2)+Math.floor(r/3))%2==0};case h:return function(t,r){return t*r%2+t*r%3==0};case s:return function(t,r){return(t*r%2+t*r%3)%2==0};case v:return function(t,r){return(t*r%3+(t+r)%2)%2==0};default:throw"bad maskPattern:"+t}},t.getErrorCorrectPolynomial=function(t){for(var r=C([1],0),e=0;e<t;e+=1)r=r.multiply(C([1,w.gexp(e)],0));return r},t.getLengthInBits=function(t,r){if(1<=r&&r<10)switch(t){case a:return 10;case u:return 9;case o:case f:return 8;default:throw"mode:"+t}else if(r<27)switch(t){case a:return 12;case u:return 11;case o:return 16;case f:return 10;default:throw"mode:"+t}else{if(!(r<41))throw"type:"+r;switch(t){case a:return 14;case u:return 13;case o:return 16;case f:return 12;default:throw"mode:"+t}}},t.getLostPoint=function(t){for(var r=t.getModuleCount(),e=0,n=0;n<r;n+=1)for(var o=0;o<r;o+=1){for(var i=0,a=t.isDark(n,o),u=-1;u<=1;u+=1)if(!(n+u<0||r<=n+u))for(var f=-1;f<=1;f+=1)o+f<0||r<=o+f||0==u&&0==f||a==t.isDark(n+u,o+f)&&(i+=1);5<i&&(e+=3+i-5)}for(n=0;n<r-1;n+=1)for(o=0;o<r-1;o+=1){var c=0;t.isDark(n,o)&&(c+=1),t.isDark(n+1,o)&&(c+=1),t.isDark(n,o+1)&&(c+=1),t.isDark(n+1,o+1)&&(c+=1),0!=c&&4!=c||(e+=3)}for(n=0;n<r;n+=1)for(o=0;o<r-6;o+=1)t.isDark(n,o)&&!t.isDark(n,o+1)&&t.isDark(n,o+2)&&t.isDark(n,o+3)&&t.isDark(n,o+4)&&!t.isDark(n,o+5)&&t.isDark(n,o+6)&&(e+=40);for(o=0;o<r;o+=1)for(n=0;n<r-6;n+=1)t.isDark(n,o)&&!t.isDark(n+1,o)&&t.isDark(n+2,o)&&t.isDark(n+3,o)&&t.isDark(n+4,o)&&!t.isDark(n+5,o)&&t.isDark(n+6,o)&&(e+=40);var g=0;for(o=0;o<r;o+=1)for(n=0;n<r;n+=1)t.isDark(n,o)&&(g+=1);return e+=Math.abs(100*g/r/r-50)/5*10},t);function d(t){for(var r=0;0!=t;)r+=1,t>>>=1;return r}var w=function(){for(var r=new Array(256),e=new Array(256),t=0;t<8;t+=1)r[t]=1<<t;for(t=8;t<256;t+=1)r[t]=r[t-4]^r[t-5]^r[t-6]^r[t-8];for(t=0;t<255;t+=1)e[r[t]]=t;var n={glog:function(t){if(t<1)throw"glog("+t+")";return e[t]},gexp:function(t){for(;t<0;)t+=255;for(;256<=t;)t-=255;return r[t]}};return n}();function C(n,o){if(void 0===n.length)throw n.length+"/"+o;var r=function(){for(var t=0;t<n.length&&0==n[t];)t+=1;for(var r=new Array(n.length-t+o),e=0;e<n.length-t;e+=1)r[e]=n[e+t];return r}(),i={getAt:function(t){return r[t]},getLength:function(){return r.length},multiply:function(t){for(var r=new Array(i.getLength()+t.getLength()-1),e=0;e<i.getLength();e+=1)for(var n=0;n<t.getLength();n+=1)r[e+n]^=w.gexp(w.glog(i.getAt(e))+w.glog(t.getAt(n)));return C(r,0)},mod:function(t){if(i.getLength()-t.getLength()<0)return i;for(var r=w.glog(i.getAt(0))-w.glog(t.getAt(0)),e=new Array(i.getLength()),n=0;n<i.getLength();n+=1)e[n]=i.getAt(n);for(n=0;n<t.getLength();n+=1)e[n]^=w.gexp(w.glog(t.getAt(n))+r);return C(e,0).mod(t)}};return i}function p(){var e=[],o={writeByte:function(t){e.push(255&t)},writeShort:function(t){o.writeByte(t),o.writeByte(t>>>8)},writeBytes:function(t,r,e){r=r||0,e=e||t.length;for(var n=0;n<e;n+=1)o.writeByte(t[n+r])},writeString:function(t){for(var r=0;r<t.length;r+=1)o.writeByte(t.charCodeAt(r))},toByteArray:function(){return e},toString:function(){var t="";t+="[";for(var r=0;r<e.length;r+=1)0<r&&(t+=","),t+=e[r];return t+="]"}};return o}var k,A,b=(k=[[1,26,19],[1,26,16],[1,26,13],[1,26,9],[1,44,34],[1,44,28],[1,44,22],[1,44,16],[1,70,55],[1,70,44],[2,35,17],[2,35,13],[1,100,80],[2,50,32],[2,50,24],[4,25,9],[1,134,108],[2,67,43],[2,33,15,2,34,16],[2,33,11,2,34,12],[2,86,68],[4,43,27],[4,43,19],[4,43,15],[2,98,78],[4,49,31],[2,32,14,4,33,15],[4,39,13,1,40,14],[2,121,97],[2,60,38,2,61,39],[4,40,18,2,41,19],[4,40,14,2,41,15],[2,146,116],[3,58,36,2,59,37],[4,36,16,4,37,17],[4,36,12,4,37,13],[2,86,68,2,87,69],[4,69,43,1,70,44],[6,43,19,2,44,20],[6,43,15,2,44,16],[4,101,81],[1,80,50,4,81,51],[4,50,22,4,51,23],[3,36,12,8,37,13],[2,116,92,2,117,93],[6,58,36,2,59,37],[4,46,20,6,47,21],[7,42,14,4,43,15],[4,133,107],[8,59,37,1,60,38],[8,44,20,4,45,21],[12,33,11,4,34,12],[3,145,115,1,146,116],[4,64,40,5,65,41],[11,36,16,5,37,17],[11,36,12,5,37,13],[5,109,87,1,110,88],[5,65,41,5,66,42],[5,54,24,7,55,25],[11,36,12,7,37,13],[5,122,98,1,123,99],[7,73,45,3,74,46],[15,43,19,2,44,20],[3,45,15,13,46,16],[1,135,107,5,136,108],[10,74,46,1,75,47],[1,50,22,15,51,23],[2,42,14,17,43,15],[5,150,120,1,151,121],[9,69,43,4,70,44],[17,50,22,1,51,23],[2,42,14,19,43,15],[3,141,113,4,142,114],[3,70,44,11,71,45],[17,47,21,4,48,22],[9,39,13,16,40,14],[3,135,107,5,136,108],[3,67,41,13,68,42],[15,54,24,5,55,25],[15,43,15,10,44,16],[4,144,116,4,145,117],[17,68,42],[17,50,22,6,51,23],[19,46,16,6,47,17],[2,139,111,7,140,112],[17,74,46],[7,54,24,16,55,25],[34,37,13],[4,151,121,5,152,122],[4,75,47,14,76,48],[11,54,24,14,55,25],[16,45,15,14,46,16],[6,147,117,4,148,118],[6,73,45,14,74,46],[11,54,24,16,55,25],[30,46,16,2,47,17],[8,132,106,4,133,107],[8,75,47,13,76,48],[7,54,24,22,55,25],[22,45,15,13,46,16],[10,142,114,2,143,115],[19,74,46,4,75,47],[28,50,22,6,51,23],[33,46,16,4,47,17],[8,152,122,4,153,123],[22,73,45,3,74,46],[8,53,23,26,54,24],[12,45,15,28,46,16],[3,147,117,10,148,118],[3,73,45,23,74,46],[4,54,24,31,55,25],[11,45,15,31,46,16],[7,146,116,7,147,117],[21,73,45,7,74,46],[1,53,23,37,54,24],[19,45,15,26,46,16],[5,145,115,10,146,116],[19,75,47,10,76,48],[15,54,24,25,55,25],[23,45,15,25,46,16],[13,145,115,3,146,116],[2,74,46,29,75,47],[42,54,24,1,55,25],[23,45,15,28,46,16],[17,145,115],[10,74,46,23,75,47],[10,54,24,35,55,25],[19,45,15,35,46,16],[17,145,115,1,146,116],[14,74,46,21,75,47],[29,54,24,19,55,25],[11,45,15,46,46,16],[13,145,115,6,146,116],[14,74,46,23,75,47],[44,54,24,7,55,25],[59,46,16,1,47,17],[12,151,121,7,152,122],[12,75,47,26,76,48],[39,54,24,14,55,25],[22,45,15,41,46,16],[6,151,121,14,152,122],[6,75,47,34,76,48],[46,54,24,10,55,25],[2,45,15,64,46,16],[17,152,122,4,153,123],[29,74,46,14,75,47],[49,54,24,10,55,25],[24,45,15,46,46,16],[4,152,122,18,153,123],[13,74,46,32,75,47],[48,54,24,14,55,25],[42,45,15,32,46,16],[20,147,117,4,148,118],[40,75,47,7,76,48],[43,54,24,22,55,25],[10,45,15,67,46,16],[19,148,118,6,149,119],[18,75,47,31,76,48],[34,54,24,34,55,25],[20,45,15,61,46,16]],(A={}).getRSBlocks=function(t,r){var e=function(t,r){switch(r){case y.L:return k[4*(t-1)+0];case y.M:return k[4*(t-1)+1];case y.Q:return k[4*(t-1)+2];case y.H:return k[4*(t-1)+3];default:return}}(t,r);if(void 0===e)throw"bad rs block @ typeNumber:"+t+"/errorCorrectionLevel:"+r;for(var n,o,i=e.length/3,a=[],u=0;u<i;u+=1)for(var f=e[3*u+0],c=e[3*u+1],g=e[3*u+2],l=0;l<f;l+=1)a.push((n=g,o=void 0,(o={}).totalCount=c,o.dataCount=n,o));return a},A),M=function(){var e=[],n=0,o={getBuffer:function(){return e},getAt:function(t){var r=Math.floor(t/8);return 1==(e[r]>>>7-t%8&1)},put:function(t,r){for(var e=0;e<r;e+=1)o.putBit(1==(t>>>r-e-1&1))},getLengthInBits:function(){return n},putBit:function(t){var r=Math.floor(n/8);e.length<=r&&e.push(0),t&&(e[r]|=128>>>n%8),n+=1}};return o},x=function(t){var r=a,n=t,e={getMode:function(){return r},getLength:function(t){return n.length},write:function(t){for(var r=n,e=0;e+2<r.length;)t.put(o(r.substring(e,e+3)),10),e+=3;e<r.length&&(r.length-e==1?t.put(o(r.substring(e,e+1)),4):r.length-e==2&&t.put(o(r.substring(e,e+2)),7))}},o=function(t){for(var r=0,e=0;e<t.length;e+=1)r=10*r+i(t.charAt(e));return r},i=function(t){if("0"<=t&&t<="9")return t.charCodeAt(0)-"0".charCodeAt(0);throw"illegal char :"+t};return e},m=function(t){var r=u,n=t,e={getMode:function(){return r},getLength:function(t){return n.length},write:function(t){for(var r=n,e=0;e+1<r.length;)t.put(45*o(r.charAt(e))+o(r.charAt(e+1)),11),e+=2;e<r.length&&t.put(o(r.charAt(e)),6)}},o=function(t){if("0"<=t&&t<="9")return t.charCodeAt(0)-"0".charCodeAt(0);if("A"<=t&&t<="Z")return t.charCodeAt(0)-"A".charCodeAt(0)+10;switch(t){case" ":return 36;case"$":return 37;case"%":return 38;case"*":return 39;case"+":return 40;case"-":return 41;case".":return 42;case"/":return 43;case":":return 44;default:throw"illegal char :"+t}};return e},L=function(t){var r=o,e=i.stringToBytes(t),n={getMode:function(){return r},getLength:function(t){return e.length},write:function(t){for(var r=0;r<e.length;r+=1)t.put(e[r],8)}};return n},D=function(t){var r=f,e=i.stringToBytesFuncs.SJIS;if(!e)throw"sjis not supported.";!function(){var t=e("友");if(2!=t.length||38726!=(t[0]<<8|t[1]))throw"sjis not supported."}();var o=e(t),n={getMode:function(){return r},getLength:function(t){return~~(o.length/2)},write:function(t){for(var r=o,e=0;e+1<r.length;){var n=(255&r[e])<<8|255&r[e+1];if(33088<=n&&n<=40956)n-=33088;else{if(!(57408<=n&&n<=60351))throw"illegal char at "+(e+1)+"/"+n;n-=49472}n=192*(n>>>8&255)+(255&n),t.put(n,13),e+=2}if(e<r.length)throw"illegal char at "+(e+1)}};return n},S=function(t){var e=t,n=0,o=0,i=0,r={read:function(){for(;i<8;){if(n>=e.length){if(0==i)return-1;throw"unexpected end of file./"+i}var t=e.charAt(n);if(n+=1,"="==t)return i=0,-1;t.match(/^\s$/)||(o=o<<6|a(t.charCodeAt(0)),i+=6)}var r=o>>>i-8&255;return i-=8,r}},a=function(t){if(65<=t&&t<=90)return t-65;if(97<=t&&t<=122)return t-97+26;if(48<=t&&t<=57)return t-48+52;if(43==t)return 62;if(47==t)return 63;throw"c:"+t};return r},I=function(t,r,e){for(var n=function(t,r){var n=t,o=r,l=new Array(t*r),e={setPixel:function(t,r,e){l[r*n+t]=e},write:function(t){t.writeString("GIF87a"),t.writeShort(n),t.writeShort(o),t.writeByte(128),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(255),t.writeByte(255),t.writeByte(255),t.writeString(","),t.writeShort(0),t.writeShort(0),t.writeShort(n),t.writeShort(o),t.writeByte(0);var r=i(2);t.writeByte(2);for(var e=0;255<r.length-e;)t.writeByte(255),t.writeBytes(r,e,255),e+=255;t.writeByte(r.length-e),t.writeBytes(r,e,r.length-e),t.writeByte(0),t.writeString(";")}},i=function(t){for(var r=1<<t,e=1+(1<<t),n=t+1,o=h(),i=0;i<r;i+=1)o.add(String.fromCharCode(i));o.add(String.fromCharCode(r)),o.add(String.fromCharCode(e));var a=p(),u=function(t){var e=t,n=0,o=0,r={write:function(t,r){if(t>>>r!=0)throw"length over";for(;8<=n+r;)e.writeByte(255&(t<<n|o)),r-=8-n,t>>>=8-n,n=o=0;o|=t<<n,n+=r},flush:function(){0<n&&e.writeByte(o)}};return r}(a);u.write(r,n);var f=0,c=String.fromCharCode(l[f]);for(f+=1;f<l.length;){var g=String.fromCharCode(l[f]);f+=1,o.contains(c+g)?c+=g:(u.write(o.indexOf(c),n),o.size()<4095&&(o.size()==1<<n&&(n+=1),o.add(c+g)),c=g)}return u.write(o.indexOf(c),n),u.write(e,n),u.flush(),a.toByteArray()},h=function(){var r={},e=0,n={add:function(t){if(n.contains(t))throw"dup key:"+t;r[t]=e,e+=1},size:function(){return e},indexOf:function(t){return r[t]},contains:function(t){return void 0!==r[t]}};return n};return e}(t,r),o=0;o<r;o+=1)for(var i=0;i<t;i+=1)n.setPixel(i,o,e(i,o));var a=p();n.write(a);for(var u=function(){function e(t){a+=String.fromCharCode(r(63&t))}var n=0,o=0,i=0,a="",t={},r=function(t){if(t<0);else{if(t<26)return 65+t;if(t<52)return t-26+97;if(t<62)return t-52+48;if(62==t)return 43;if(63==t)return 47}throw"n:"+t};return t.writeByte=function(t){for(n=n<<8|255&t,o+=8,i+=1;6<=o;)e(n>>>o-6),o-=6},t.flush=function(){if(0<o&&(e(n<<6-o),o=n=0),i%3!=0)for(var t=3-i%3,r=0;r<t;r+=1)a+="="},t.toString=function(){return a},t}(),f=a.toByteArray(),c=0;c<f.length;c+=1)u.writeByte(f[c]);return u.flush(),"data:image/gif;base64,"+u};return i}();qrcode.stringToBytesFuncs["UTF-8"]=function(t){return function(t){for(var r=[],e=0;e<t.length;e++){var n=t.charCodeAt(e);n<128?r.push(n):n<2048?r.push(192|n>>6,128|63&n):n<55296||57344<=n?r.push(224|n>>12,128|n>>6&63,128|63&n):(e++,n=65536+((1023&n)<<10|1023&t.charCodeAt(e)),r.push(240|n>>18,128|n>>12&63,128|n>>6&63,128|63&n))}return r}(t)},function(t){"function"==typeof define&&define.amd?define([],t):"object"==typeof exports&&(module.exports=t())}(function(){return qrcode});
+</script>
+    <style>
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2.25rem; }
+
+      :root {
+        --bg: #edf3f1;
+        --bg-2: #e3efec;
+        --ink: #0b1d1a;
+        --ink-soft: #3d554f;
+        --ink-faint: #6d857f;
+        --card: rgba(255,255,255,.72);
+        --card-solid: #ffffff;
+        --card-border: rgba(11,29,26,.09);
+        --teal: #0b7a66;
+        --teal-deep: #075e4e;
+        --teal-bright: #12a37f;
+        --mint: #7fe3c3;
+        --coral: #ff6a3d;
+        --coral-soft: #ffe9e1;
+        --amber: #f5a623;
+        --field: rgba(255,255,255,.9);
+        --field-border: rgba(11,29,26,.16);
+        --shadow: 0 18px 44px -18px rgba(7,60,48,.28);
+        --shadow-sm: 0 8px 22px -10px rgba(7,60,48,.22);
+        --radius: 20px;
+        --grad: linear-gradient(120deg, #075e4e 0%, #0b7a66 45%, #12a37f 100%);
+        --grad-warm: linear-gradient(120deg, #ff6a3d, #f5a623);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #07120f;
+          --bg-2: #0a1a16;
+          --ink: #eafaf4;
+          --ink-soft: #b7d4cb;
+          --ink-faint: #7fa398;
+          --card: rgba(16,34,29,.66);
+          --card-solid: #10221d;
+          --card-border: rgba(127,227,195,.14);
+          --teal: #2bc79b;
+          --teal-deep: #7fe3c3;
+          --teal-bright: #2bc79b;
+          --coral-soft: rgba(255,106,61,.16);
+          --field: rgba(10,26,22,.85);
+          --field-border: rgba(127,227,195,.22);
+          --shadow: 0 18px 44px -18px rgba(0,0,0,.65);
+          --shadow-sm: 0 8px 22px -10px rgba(0,0,0,.55);
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Manrope", system-ui, sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(720px 420px at 88% -60px, rgba(18,163,127,.20), transparent 62%),
+          radial-gradient(620px 380px at -80px 240px, rgba(255,106,61,.13), transparent 60%),
+          linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+        background-attachment: fixed;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3, .display { font-family: "Plus Jakarta Sans", "Manrope", sans-serif; letter-spacing: -.01em; }
+      .mono { font-family: "JetBrains Mono", monospace; }
+      a { color: var(--teal); }
+      ::selection { background: var(--mint); color: #06382c; }
+
+      .wrap { max-width: 1120px; margin: 0 auto; padding: 0 18px 72px; }
+
+      /* ---------- Nav ---------- */
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+        background: color-mix(in srgb, var(--bg) 72%, transparent);
+        border-bottom: 1px solid var(--card-border);
+      }
+      .nav-in { max-width: 1120px; margin: 0 auto; padding: 10px 18px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+      .brand { display: flex; align-items: center; gap: 10px; font-family: "Plus Jakarta Sans"; font-weight: 800; font-size: 1.02rem; }
+      .brand .mark {
+        width: 36px; height: 36px; border-radius: 11px; background: var(--grad);
+        display: grid; place-items: center; box-shadow: var(--shadow-sm); flex: none;
+      }
+      .brand small { display: block; font-family: "Manrope"; font-weight: 600; font-size: .68rem; color: var(--ink-faint); letter-spacing: .04em; }
+      .tabs { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+      .tab {
+        border: 1px solid transparent; background: transparent; color: var(--ink-soft);
+        font: 600 .86rem "Manrope"; padding: 8px 14px; border-radius: 999px; cursor: pointer;
+        display: inline-flex; align-items: center; gap: 7px; transition: all .18s ease;
+      }
+      .tab svg { width: 15px; height: 15px; }
+      .tab:hover { color: var(--ink); background: var(--card); }
+      .tab.active { background: var(--grad); color: #fff; box-shadow: var(--shadow-sm); border-color: transparent; }
+      @media (prefers-color-scheme: dark) { .tab.active { color: #04231b; } }
+
+      /* ---------- Hero ---------- */
+      .hero { padding: 44px 0 8px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 26px; align-items: start; }
+      @media (max-width: 860px) { .hero { grid-template-columns: 1fr; padding-top: 28px; } }
+      .pill {
+        display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 999px;
+        background: var(--card); border: 1px solid var(--card-border); backdrop-filter: blur(8px);
+        font: 700 .74rem "Manrope"; color: var(--teal-deep); letter-spacing: .02em;
+      }
+      .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal-bright); box-shadow: 0 0 0 4px rgba(18,163,127,.18); animation: pulse 2.2s infinite; }
+      @keyframes pulse { 0%,100% { box-shadow: 0 0 0 3px rgba(18,163,127,.22);} 50% { box-shadow: 0 0 0 6px rgba(18,163,127,.06);} }
+      .hero h1 { font-size: clamp(2rem, 5.2vw, 3.3rem); line-height: 1.06; margin: 16px 0 14px; font-weight: 800; }
+      .hero h1 .hl { color: var(--teal); position: relative; white-space: nowrap; }
+      .hero h1 .hl::after { content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 9px; background: rgba(127,227,195,.55); z-index: -1; border-radius: 4px; }
+      .hero p.lead { font-size: 1.05rem; line-height: 1.65; color: var(--ink-soft); margin: 0 0 22px; max-width: 34rem; }
+      .hero-cta { display: flex; gap: 10px; flex-wrap: wrap; }
+
+      .btn {
+        border: 0; cursor: pointer; font: 700 .92rem "Manrope"; border-radius: 13px;
+        padding: 11px 20px; display: inline-flex; align-items: center; gap: 8px; justify-content: center;
+        transition: transform .15s ease, box-shadow .15s ease, background .15s ease; text-decoration: none;
+      }
+      .btn:active { transform: translateY(1px) scale(.99); }
+      .btn-primary { background: var(--grad); color: #fff; box-shadow: var(--shadow-sm); }
+      .btn-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+      @media (prefers-color-scheme: dark) { .btn-primary { color: #04231b; } }
+      .btn-ghost { background: var(--card); color: var(--ink); border: 1px solid var(--card-border); backdrop-filter: blur(8px); }
+      .btn-ghost:hover { border-color: var(--teal); color: var(--teal-deep); }
+      .btn-coral { background: var(--grad-warm); color: #fff; box-shadow: var(--shadow-sm); }
+      .btn-sm { padding: 8px 14px; font-size: .83rem; border-radius: 10px; }
+      .btn-danger { background: transparent; color: #d64545; border: 1px solid rgba(214,69,69,.4); }
+      .btn-delete { background: #d64545; color: #fff; border: 1.5px solid #d64545; font-weight: 800; }
+      .btn-delete:hover { background: #b42318; border-color: #b42318; }
+      .delete-overlay { display: none; position: fixed; inset: 0; z-index: 120; background: rgba(4,20,16,.62); padding: 18px; place-items: center; }
+      .delete-overlay.on { display: grid; }
+      .delete-box { background: var(--card-solid); border-radius: 18px; padding: 26px 24px; max-width: 430px; width: 100%; box-shadow: var(--shadow); text-align: center; }
+      .delete-box h3 { margin: 0 0 8px; font-size: 1.2rem; }
+      .delete-box p { margin: 0 0 18px; color: var(--ink-soft); line-height: 1.6; font-size: .93rem; }
+      .help-bn { padding: 22px; margin-top: 16px; }
+      .help-bn h3 { margin: 0 0 10px; font-size: 1.05rem; }
+      .help-bn ol { margin: 0; padding-left: 20px; color: var(--ink-soft); line-height: 1.9; font-size: .93rem; }
+      .btn[disabled] { opacity: .55; cursor: not-allowed; transform: none; }
+
+      /* ---------- Glass cards ---------- */
+      .glass {
+        background: var(--card); border: 1px solid var(--card-border); border-radius: var(--radius);
+        backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: var(--shadow-sm);
+      }
+      .link-card { padding: 22px; position: relative; overflow: hidden; }
+      .link-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: var(--grad-warm); }
+      .link-card h3 { margin: 2px 0 4px; font-size: 1.05rem; }
+      .link-card .sub { color: var(--ink-soft); font-size: .88rem; margin: 0 0 14px; line-height: 1.55; }
+      .linkbox {
+        display: flex; align-items: center; gap: 8px; background: var(--field); border: 1.5px dashed var(--field-border);
+        border-radius: 12px; padding: 9px 9px 9px 14px; margin-bottom: 10px;
+      }
+      .linkbox .url { font-family: "JetBrains Mono"; font-size: .8rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; color: var(--teal-deep); }
+      .field label { display: block; font: 700 .78rem "Manrope"; color: var(--ink-soft); margin: 0 0 6px; letter-spacing: .02em; }
+      input[type="text"], input[type="number"], input[type="email"], input[type="tel"], input[type="date"],
+      select, textarea {
+        width: 100%; font: 500 .95rem "Manrope"; color: var(--ink);
+        background: var(--field); border: 1.5px solid var(--field-border); border-radius: 12px;
+        padding: 10px 13px; outline: none; transition: border-color .15s, box-shadow .15s;
+      }
+      textarea { resize: vertical; min-height: 84px; }
+      input:focus, select:focus, textarea:focus { border-color: var(--teal-bright); box-shadow: 0 0 0 4px rgba(18,163,127,.14); }
+      .qr-wrap { display: flex; gap: 16px; align-items: center; margin-top: 14px; }
+      .qr-box { background: #fff; padding: 8px; border-radius: 12px; line-height: 0; flex: none; box-shadow: var(--shadow-sm); }
+      .qr-box img, .qr-box canvas { width: 92px !important; height: 92px !important; }
+      .qr-wrap p { font-size: .82rem; color: var(--ink-soft); margin: 0; line-height: 1.55; }
+
+      /* ---------- Stats ---------- */
+      .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 30px 0 8px; }
+      @media (max-width: 860px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+      .stat { padding: 18px 20px; }
+      .stat .num { font-family: "Plus Jakarta Sans"; font-weight: 800; font-size: 1.9rem; line-height: 1; }
+      .stat .lbl { color: var(--ink-faint); font: 600 .8rem "Manrope"; margin-top: 6px; }
+      .stat .ic { float: right; width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--coral-soft); color: var(--coral); }
+      .stat .ic svg { width: 18px; height: 18px; }
+
+      /* ---------- Sections / views ---------- */
+      .view { display: none; }
+      .view.active { display: block; animation: rise .38s ease both; }
+      @keyframes rise { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: none;} }
+      @media (prefers-reduced-motion: reduce) { .view.active { animation: none; } .pill .dot { animation: none; } html { scroll-behavior: auto; } }
+      .sec-head { margin: 38px 0 16px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+      .sec-head h2 { font-size: 1.45rem; margin: 0; font-weight: 800; }
+      .sec-head p { margin: 0; color: var(--ink-faint); font-size: .92rem; }
+
+      .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      @media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
+      .step { padding: 20px; }
+      .step .n { font-family: "JetBrains Mono"; font-weight: 700; font-size: .78rem; color: var(--coral); letter-spacing: .08em; }
+      .step h3 { margin: 8px 0 6px; font-size: 1rem; }
+      .step p { margin: 0; color: var(--ink-soft); font-size: .89rem; line-height: 1.6; }
+
+      /* ---------- Survey cards ---------- */
+      .survey-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+      .survey-card { padding: 22px; display: flex; flex-direction: column; gap: 10px; transition: transform .18s ease, box-shadow .18s ease; }
+      .survey-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+      .survey-card h3 { margin: 0; font-size: 1.12rem; }
+      .survey-card p { margin: 0; color: var(--ink-soft); font-size: .89rem; line-height: 1.55; flex: 1; }
+      .chiprow { display: flex; gap: 6px; flex-wrap: wrap; }
+      .chip { font: 700 .72rem "Manrope"; padding: 4px 10px; border-radius: 999px; background: var(--bg-2); color: var(--teal-deep); border: 1px solid var(--card-border); }
+      .chip.code { font-family: "JetBrains Mono"; background: var(--ink); color: var(--mint); border-color: transparent; }
+      @media (prefers-color-scheme: dark) { .chip.code { background: #000; } }
+      .chip.ai { background: var(--coral-soft); color: var(--coral); }
+      .card-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+      .card-link { margin-top: 2px; }
+      .card-link label { display: block; font: 700 .72rem "Manrope"; color: var(--ink-faint); letter-spacing: .03em; margin-bottom: 5px; }
+      .card-link input {
+        width: 100%; font-family: "JetBrains Mono"; font-size: .74rem; color: var(--teal-deep);
+        background: var(--field); border: 1.5px dashed var(--field-border); border-radius: 10px;
+        padding: 8px 11px; outline: none; cursor: text;
+      }
+      .card-link input:focus { border-color: var(--teal-bright); box-shadow: 0 0 0 4px rgba(18,163,127,.14); }
+
+      /* Visible fallback shown when the clipboard is blocked (e.g. inside the app frame) */
+      .copy-fallback {
+        display: none; position: fixed; left: 50%; bottom: 78px; transform: translateX(-50%); z-index: 110;
+        width: min(560px, calc(100vw - 28px)); background: var(--card-solid); border: 1px solid var(--card-border);
+        border-radius: 14px; box-shadow: var(--shadow); padding: 14px 16px;
+      }
+      .copy-fallback.on { display: block; }
+      .copy-fallback label { display: block; font: 700 .82rem "Manrope"; color: var(--ink); margin-bottom: 8px; line-height: 1.5; }
+      .copy-fallback .row { display: flex; gap: 8px; align-items: center; }
+      .copy-fallback input {
+        flex: 1; min-width: 0; font-family: "JetBrains Mono"; font-size: .76rem; color: var(--teal-deep);
+        background: var(--field); border: 1.5px solid var(--teal-bright); border-radius: 10px; padding: 9px 11px; outline: none;
+      }
+
+      /* ---------- Generator ---------- */
+      .gen-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 18px; align-items: start; }
+      @media (max-width: 860px) { .gen-grid { grid-template-columns: 1fr; } }
+      .panel { padding: 22px; }
+      .panel h3 { margin: 0 0 6px; font-size: 1.08rem; }
+      .panel .sub { color: var(--ink-soft); font-size: .89rem; line-height: 1.6; margin: 0 0 16px; }
+      .topic-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+      .topic-chips button {
+        border: 1px solid var(--card-border); background: var(--field); color: var(--ink-soft);
+        font: 600 .78rem "Manrope"; border-radius: 999px; padding: 6px 12px; cursor: pointer;
+      }
+      .topic-chips button:hover { border-color: var(--teal); color: var(--teal-deep); }
+      .thinking { display: none; align-items: center; gap: 10px; font: 600 .88rem "Manrope"; color: var(--teal-deep); margin-top: 14px; }
+      .thinking.on { display: flex; }
+      .spin { width: 18px; height: 18px; border-radius: 50%; border: 3px solid rgba(18,163,127,.25); border-top-color: var(--teal-bright); animation: sp 0.8s linear infinite; flex: none; }
+      @keyframes sp { to { transform: rotate(360deg);} }
+      @media (prefers-reduced-motion: reduce) { .spin { animation-duration: 2.4s; } }
+
+      .qedit { border: 1px solid var(--card-border); border-radius: 14px; padding: 12px; margin-bottom: 10px; background: var(--field); }
+      .qedit .row { display: flex; gap: 8px; flex-wrap: wrap; }
+      .qedit .row > * { flex: 1; min-width: 120px; }
+      .qedit .del { flex: 0 0 auto; }
+      .sec-title { font: 800 .8rem "Plus Jakarta Sans"; letter-spacing: .05em; text-transform: uppercase; color: var(--teal-deep); margin: 18px 0 8px; }
+      .empty-note { color: var(--ink-faint); font-size: .9rem; line-height: 1.6; border: 1.5px dashed var(--field-border); border-radius: 14px; padding: 18px; text-align: center; }
+
+      /* ---------- Respondent form ---------- */
+      .form-shell { max-width: 720px; margin: 34px auto 0; }
+      .form-head { padding: 26px; margin-bottom: 16px; position: relative; overflow: hidden; }
+      .form-head::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 5px; background: var(--grad); }
+      .form-head h2 { margin: 6px 0 8px; font-size: 1.5rem; }
+      .form-head p { margin: 0; color: var(--ink-soft); line-height: 1.6; font-size: .94rem; }
+      .progress { height: 8px; border-radius: 99px; background: var(--bg-2); overflow: hidden; margin-top: 16px; }
+      .progress > div { height: 100%; background: var(--grad-warm); border-radius: 99px; transition: width .3s ease; width: 0%; }
+      .form-sec { padding: 22px 26px; margin-bottom: 16px; }
+      .form-sec h3 { margin: 0 0 4px; font-size: 1.05rem; display: flex; align-items: center; gap: 9px; }
+      .form-sec h3 .sn { width: 26px; height: 26px; border-radius: 8px; background: var(--grad); color: #fff; display: grid; place-items: center; font-size: .8rem; flex: none; }
+      @media (prefers-color-scheme: dark) { .form-sec h3 .sn { color: #04231b; } }
+      .form-sec .sdesc { color: var(--ink-faint); font-size: .85rem; margin: 0 0 14px 35px; }
+      .fq { margin-bottom: 16px; }
+      .fq:last-child { margin-bottom: 2px; }
+      .fq label.q { display: block; font: 700 .92rem "Manrope"; margin-bottom: 7px; }
+      .fq label.q .req { color: var(--coral); }
+      .opts { display: grid; gap: 8px; }
+      .opt {
+        display: flex; align-items: center; gap: 10px; padding: 10px 13px; border: 1.5px solid var(--field-border);
+        border-radius: 12px; background: var(--field); cursor: pointer; font: 600 .9rem "Manrope"; min-height: 44px;
+      }
+      .opt:has(input:checked) { border-color: var(--teal-bright); background: rgba(18,163,127,.08); }
+      .opt input { width: 17px; height: 17px; accent-color: var(--teal); flex: none; }
+      .stars { display: flex; gap: 6px; }
+      .stars button {
+        width: 46px; height: 46px; border-radius: 12px; border: 1.5px solid var(--field-border); background: var(--field);
+        font-size: 1.25rem; cursor: pointer; color: #c8b28a; transition: all .13s;
+      }
+      .stars button.on { background: var(--grad-warm); border-color: transparent; color: #fff; transform: scale(1.06); }
+      .err { color: #d64545; font-size: .8rem; font-weight: 600; margin-top: 5px; display: none; }
+      .fq.invalid input, .fq.invalid select, .fq.invalid textarea { border-color: #d64545; }
+      .fq.invalid .err { display: block; }
+      .success { text-align: center; padding: 44px 26px; }
+      .success .tick { width: 72px; height: 72px; margin: 0 auto 16px; border-radius: 50%; background: var(--grad); display: grid; place-items: center; box-shadow: var(--shadow); }
+      .success h2 { margin: 0 0 8px; }
+      .success p { color: var(--ink-soft); line-height: 1.65; margin: 0 auto 20px; max-width: 26rem; }
+
+      /* ---------- Admin ---------- */
+      .admin-tools { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; }
+      .admin-tools select { width: auto; min-width: 210px; }
+      .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+      @media (max-width: 860px) { .charts { grid-template-columns: 1fr; } }
+      .chart-card { padding: 20px 22px; }
+      .chart-card h3 { margin: 0 0 4px; font-size: .98rem; }
+      .chart-card .sub { color: var(--ink-faint); font-size: .82rem; margin: 0 0 12px; }
+      .bar-row { display: grid; grid-template-columns: 118px 1fr 30px; gap: 10px; align-items: center; margin-bottom: 9px; font-size: .83rem; }
+      .bar-row .bl { font-weight: 600; color: var(--ink-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .bar-track { height: 12px; background: var(--bg-2); border-radius: 99px; overflow: hidden; }
+      .bar-fill { height: 100%; border-radius: 99px; background: var(--grad); transition: width .5s ease; }
+      .bar-row .bv { font-family: "JetBrains Mono"; font-weight: 700; text-align: right; }
+      .insight { padding: 20px 22px; margin-bottom: 16px; border-left: 5px solid var(--coral); }
+      .insight h3 { margin: 0 0 8px; font-size: .98rem; display: flex; gap: 8px; align-items: center; }
+      .insight ul { margin: 0; padding-left: 18px; color: var(--ink-soft); line-height: 1.75; font-size: .9rem; }
+      .table-scroll { overflow-x: auto; border-radius: var(--radius); }
+      table { border-collapse: collapse; width: 100%; font-size: .86rem; min-width: 640px; }
+      th { text-align: left; font: 800 .74rem "Plus Jakarta Sans"; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-faint); padding: 13px 14px; border-bottom: 1px solid var(--card-border); white-space: nowrap; }
+      td { padding: 11px 14px; border-bottom: 1px solid var(--card-border); color: var(--ink-soft); vertical-align: top; }
+      tr:last-child td { border-bottom: 0; }
+      td:first-child { font-weight: 700; color: var(--ink); white-space: nowrap; }
+      .sample-tag { font: 700 .68rem "Manrope"; background: var(--coral-soft); color: var(--coral); padding: 2px 8px; border-radius: 99px; margin-left: 6px; vertical-align: middle; }
+
+      /* ---------- Guide ---------- */
+      .guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      @media (max-width: 860px) { .guide-grid { grid-template-columns: 1fr; } }
+      .gcard { padding: 24px; }
+      .gcard h3 { margin: 0 0 10px; font-size: 1.05rem; display: flex; align-items: center; gap: 9px; }
+      .gcard ol, .gcard ul { margin: 0; padding-left: 20px; color: var(--ink-soft); line-height: 1.85; font-size: .92rem; }
+      .gcard code { font-family: "JetBrains Mono"; font-size: .8rem; background: var(--bg-2); padding: 1px 7px; border-radius: 6px; color: var(--teal-deep); }
+      .flowline { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font: 700 .82rem "Manrope"; margin: 6px 0 14px; }
+      .flowline .node { background: var(--grad); color: #fff; padding: 7px 13px; border-radius: 10px; }
+      @media (prefers-color-scheme: dark) { .flowline .node { color: #04231b; } }
+      .flowline .arr { color: var(--coral); font-weight: 800; }
+      .flowline .node.alt { background: var(--grad-warm); color: #fff; }
+
+      .toast {
+        position: fixed; left: 50%; bottom: 26px; transform: translate(-50%, 80px); z-index: 99;
+        background: var(--ink); color: var(--bg); font: 700 .88rem "Manrope"; padding: 12px 20px; border-radius: 13px;
+        box-shadow: var(--shadow); transition: transform .3s ease; max-width: calc(100vw - 32px); text-align: center;
+      }
+      .toast.on { transform: translate(-50%, 0); }
+      footer { margin-top: 46px; text-align: center; color: var(--ink-faint); font-size: .82rem; line-height: 1.7; }
+
+      /* ---------- Respondent mode (opened via a share link) ----------
+         The visitor sees ONLY the survey form: no nav, no footer, no home page. */
+      body.respondent .nav, body.respondent footer { display: none; }
+      body.respondent .form-shell { margin-top: 26px; }
+    </style>
+  </head>
+  <body>
+
+    <nav class="nav">
+      <div class="nav-in">
+        <div class="brand">
+          <span class="mark" aria-hidden="true">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></svg>
+          </span>
+          <span>SurveyMind AI<small>WEB SURVEY SOFTWARE</small></span>
+        </div>
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-nav="home" role="tab">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home
+          </button>
+          <button class="tab" data-nav="create" role="tab">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>AI Generator
+          </button>
+          <button class="tab" data-nav="surveys" role="tab">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>My Surveys
+          </button>
+          <button class="tab" data-nav="admin" role="tab">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Admin Dashboard
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrap">
+
+      <!-- ============ HOME ============ -->
+      <section class="view active" id="view-home">
+        <div class="hero">
+          <div>
+            <span class="pill"><span class="dot"></span> AI-POWERED · NO APP NEEDED · WORKS ON ANY PHONE</span>
+            <h1>Create a survey with AI.<br />Share <span class="hl">one link.</span><br />Collect every answer.</h1>
+            <p class="lead">Describe a topic and the AI builds a complete survey in seconds — sections, questions and answer options included. Every survey gets its own shareable link that opens the form directly — nothing else, no code to type, no sign-in — and responses from any phone appear in the Admin Dashboard once the shared backend is connected.</p>
+            <div class="hero-cta">
+              <button class="btn btn-primary" data-nav="create">✦ Generate a survey with AI</button>
+              <button class="btn btn-ghost" data-nav="admin">View Admin Dashboard</button>
+            </div>
+            <div class="stats" style="margin-top:26px;">
+              <div class="glass stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8"/></svg></span><div class="num" id="stat-surveys">1</div><div class="lbl">Surveys created</div></div>
+              <div class="glass stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg></span><div class="num" id="stat-responses">0</div><div class="lbl">Responses in dashboard (incl. samples)</div></div>
+              <div class="glass stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5l2.5 8M16 7.5l-2.5 8M8.5 6h7"/></svg></span><div class="num" id="stat-questions">12</div><div class="lbl">Questions in ready survey</div></div>
+              <div class="glass stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></span><div class="num">1</div><div class="lbl">Link per survey — opens the form</div></div>
+            </div>
+          </div>
+
+          <div class="glass link-card">
+            <h3>🔗 Your survey link — ready to share</h3>
+            <p class="sub">This is the shareable link for the ready-made <strong>Student Information Survey</strong>. Send it to anyone: when they open it, they see <strong>only the survey form</strong> — no home page, no code to type, no sign-in. When they press Submit, their answers appear in the Admin Dashboard.</p>
+            <div class="linkbox">
+              <span class="url" id="home-link">—</span>
+              <button class="btn btn-primary btn-sm" id="home-copy">Copy public link</button>
+            </div>
+            <div class="field" style="margin-top:16px;">
+              <label for="base-url">YOUR VERCEL ADDRESS — ONLY AFTER YOU DEPLOY (LEAVE EMPTY FOR NOW)</label>
+              <input type="text" id="base-url" placeholder="Leave empty — the link above already works" />
+            </div>
+            <p class="sub" style="margin:8px 0 0;">Copy Link always copies the <strong>public share link</strong> above — the one anyone can open with no sign-in, and it is also printed on the survey card below. Only after you deploy on Vercel, paste your real Vercel address here and links will use that address instead. (Internal app addresses and the old <em>your-survey.vercel.app</em> example are rejected automatically.)</p>
+            <div class="qr-wrap">
+              <div class="qr-box" id="home-qr" aria-hidden="true"></div>
+              <p><strong>Scan to open the form.</strong><br />Print this QR on a notice board or share it in a class group — scanning opens the same survey form directly.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec-head"><h2>How it works</h2><p>Three steps, start to finish</p></div>
+        <div class="steps">
+          <div class="glass step"><div class="n">STEP 01</div><h3>AI builds the survey</h3><p>Type a topic — “Student Information”, “Customer Feedback”, anything — and the generator creates sections with 10–12 ready questions. Edit, add or remove questions before publishing.</p></div>
+          <div class="glass step"><div class="n">STEP 02</div><h3>A shareable link is created</h3><p>The moment a survey is saved, its own link is ready. Send it over WhatsApp, Messenger, email — or print the QR code. The link opens the answer form directly.</p></div>
+          <div class="glass step"><div class="n">STEP 03</div><h3>Answers reach the Admin</h3><p>Every answer submitted from any phone appears in the Admin Dashboard with charts and AI insights. Download everything as a CSV file to keep or submit with the assignment.</p></div>
+        </div>
+
+        <div class="sec-head"><h2>Ready survey</h2><p>Pre-built for the assignment — 12 questions, 3 sections</p></div>
+        <div class="survey-grid" id="home-survey-grid"></div>
+      </section>
+
+      <!-- ============ AI GENERATOR ============ -->
+      <section class="view" id="view-create">
+        <div class="sec-head" style="margin-top:34px;"><h2>AI Survey Generator</h2><p>Topic in — full survey out</p></div>
+        <div class="gen-grid">
+          <div class="glass panel">
+            <h3>✦ Describe your survey</h3>
+            <p class="sub">Write any topic. The AI picks suitable sections and writes 10–12 questions with the right answer types — text, multiple choice, rating scales and more.</p>
+            <div class="field">
+              <label for="ai-topic">SURVEY TOPIC</label>
+              <input type="text" id="ai-topic" placeholder="e.g. Online Class Feedback" />
+            </div>
+            <div class="topic-chips" id="topic-chips"></div>
+            <div class="field" style="margin-top:16px;">
+              <label for="ai-audience">WHO WILL ANSWER? (OPTIONAL)</label>
+              <input type="text" id="ai-audience" placeholder="e.g. University students" />
+            </div>
+            <button class="btn btn-primary" id="ai-generate" style="width:100%; margin-top:16px;">✦ Generate survey with AI</button>
+            <div class="thinking" id="ai-thinking"><span class="spin"></span><span id="ai-thinking-text">AI is thinking…</span></div>
+            <div style="border-top:1px solid var(--card-border); margin-top:22px; padding-top:18px;">
+              <h3 style="font-size:.98rem;">Prefer to start blank?</h3>
+              <p class="sub" style="margin-bottom:12px;">Create an empty survey and add every question yourself in the editor.</p>
+              <button class="btn btn-ghost" id="blank-create" style="width:100%;">+ Create blank survey</button>
+            </div>
+          </div>
+
+          <div class="glass panel">
+            <h3>Survey editor</h3>
+            <p class="sub">Review what the AI made. Rename anything, change answer types, add options (comma separated), or add your own questions — then publish to get the shareable link.</p>
+            <div id="editor-body">
+              <div class="empty-note">No survey in the editor yet.<br />Generate one with AI on the left, or open a survey from <strong>My Surveys</strong> to edit it.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MY SURVEYS ============ -->
+      <section class="view" id="view-surveys">
+        <div class="sec-head" style="margin-top:34px;"><h2>My Surveys</h2><p>Every survey, its code and its shareable link</p></div>
+        <div class="survey-grid" id="all-survey-grid"></div>
+      </section>
+
+      <!-- ============ RESPONDENT FORM ============ -->
+      <section class="view" id="view-respond">
+        <div class="form-shell" id="form-shell"></div>
+      </section>
+
+      <!-- ============ ADMIN ============ -->
+      <section class="view" id="view-admin">
+        <div class="sec-head" style="margin-top:34px;"><h2>Admin Dashboard</h2><p>Collected responses, charts and insights</p></div>
+        <div class="stats" style="margin-top:0;">
+          <div class="glass stat"><div class="num" id="adm-total">0</div><div class="lbl">Total responses</div></div>
+          <div class="glass stat"><div class="num" id="adm-surveys">0</div><div class="lbl">Active surveys</div></div>
+          <div class="glass stat"><div class="num" id="adm-avg">—</div><div class="lbl">Average rating (ready survey)</div></div>
+          <div class="glass stat"><div class="num" id="adm-latest">—</div><div class="lbl">Latest response</div></div>
+        </div>
+        <div class="glass help-bn" style="margin-bottom:16px;">
+          <h3>🗑 Survey delete korte chaile — khub easy</h3>
+          <ol>
+            <li>Niche prottek survey card-e lal <strong>Delete</strong> button ache — ota tap koro.</li>
+            <li>Ekta box ashbe: <strong>“Yes, Delete”</strong> tap korlei survey + tar sob answer ekbare delete hoye jabe. Vul kore tap kore thakle <strong>“No, Keep it”</strong> tap koro — kichu delete hobe na.</li>
+            <li>My Surveys page-eo thik eki Delete button ache — jekono jayga theke delete kora jay.</li>
+          </ol>
+        </div>
+        <div class="survey-grid" id="adm-survey-grid" style="margin-bottom:18px;"></div>
+        <div class="admin-tools">
+          <select id="adm-filter" aria-label="Filter responses by survey"></select>
+          <button class="btn btn-primary btn-sm" id="adm-csv">⬇ Download CSV</button>
+          <button class="btn btn-ghost btn-sm" id="adm-clear-samples">Clear sample data</button>
+          <button class="btn btn-ghost btn-sm" id="adm-refresh-shared">Refresh shared answers</button>
+          <span id="shared-badge" style="font-size:.8rem; font-weight:700; padding:6px 10px; border-radius:999px; background:var(--coral-soft); color:var(--coral);">Shared backend: OFF — answers on this device only</span>
+          <span style="font-size:.82rem; color:var(--ink-faint);">Shared answers from all phones appear here once the backend is connected. Sample rows are marked.</span>
+        </div>
+        <div class="glass insight" id="adm-insights"></div>
+        <div class="charts">
+          <div class="glass chart-card"><h3 id="chart1-title">Responses per survey</h3><p class="sub">How many answers each survey has collected</p><div id="chart1"></div></div>
+          <div class="glass chart-card"><h3 id="chart2-title">Answer breakdown</h3><p class="sub" id="chart2-sub">Most useful question from the selected survey</p><div id="chart2"></div></div>
+        </div>
+        <div class="glass table-scroll"><table id="adm-table"></table></div>
+      </section>
+
+      <!-- ============ GO LIVE GUIDE ============ -->
+      <section class="view" id="view-guide">
+        <div class="sec-head" style="margin-top:34px;"><h2>Go Live Guide</h2><p>How this page becomes a public website where the link works for everyone</p></div>
+        <div class="glass panel" style="margin-bottom:16px;">
+          <h3>The big picture</h3>
+          <div class="flowline"><span class="node">This page (index.html)</span><span class="arr">→</span><span class="node">GitHub repository</span><span class="arr">→</span><span class="node">Vercel deploy</span><span class="arr">→</span><span class="node alt">Public link — works for everyone</span></div>
+          <p class="sub" style="margin:0;">Right now this page runs inside Muse, so its link only opens here. The survey link is already built in — the moment this same page is hosted on Vercel, the link becomes a real public address that anyone can open on any phone or computer. Nothing in the page needs to change: the link is generated from your website address plus the survey code — your Vercel address followed by <code>?s=SRV-001</code>.</p>
+        </div>
+        <div class="guide-grid">
+          <div class="glass gcard">
+            <h3>① Download this page</h3>
+            <ol>
+              <li>Click the button below — it saves this exact page as <code>index.html</code> on your device.</li>
+              <li>Keep the file name exactly <code>index.html</code> — browsers and Vercel look for that name first.</li>
+            </ol>
+            <button class="btn btn-primary btn-sm" id="dl-html" style="margin-top:14px;">⬇ Download index.html</button>
+          </div>
+          <div class="glass gcard">
+            <h3>② Put it on GitHub</h3>
+            <ol>
+              <li>Go to <code>github.com</code> → sign up / log in → <strong>New repository</strong>.</li>
+              <li>Name it e.g. <code>ai-survey-software</code>, keep it <strong>Public</strong>, create it.</li>
+              <li>Click <strong>uploading an existing file</strong>, add your <code>index.html</code>, then <strong>Commit changes</strong>.</li>
+            </ol>
+          </div>
+          <div class="glass gcard">
+            <h3>③ Deploy with Vercel</h3>
+            <ol>
+              <li>Go to <code>vercel.com</code> → <strong>Sign up with GitHub</strong>.</li>
+              <li><strong>Add New → Project</strong> → import your <code>ai-survey-software</code> repository.</li>
+              <li>No settings to change — just click <strong>Deploy</strong>.</li>
+              <li>In about a minute Vercel gives your public address, e.g. <code>ai-survey-software.vercel.app</code>.</li>
+            </ol>
+          </div>
+          <div class="glass gcard">
+            <h3>④ Share the survey link</h3>
+            <ol>
+              <li>Your survey link is your Vercel address + the survey code: <code>ai-survey-software.vercel.app/?s=SRV-001</code></li>
+              <li>Paste your Vercel address into the <strong>“Your live website address”</strong> box on the Home page — the link shown there and the QR code update to your real public link, ready to copy and share.</li>
+              <li>Share it anywhere: WhatsApp, Messenger, class group, or printed QR. Anyone opening it lands directly on the form.</li>
+            </ol>
+          </div>
+          <div class="glass gcard">
+            <h3>What works after going live</h3>
+            <ul>
+              <li>✅ The link opens the survey form directly for everyone, on mobile and computer — no app needed.</li>
+              <li>✅ The AI Generator, editor and Admin Dashboard all run in the browser, exactly as here.</li>
+              <li>✅ Free forever on GitHub + Vercel for a page like this.</li>
+            </ul>
+          </div>
+          <div class="glass gcard">
+            <h3>✅ GitHub-e push dewar age — last checklist</h3>
+            <ol>
+              <li><strong>Download index.html</strong> button diye file-ta download koro — ei ektai file, ar kono code change lagbe na.</li>
+              <li>File-er naam jeno thik <code>index.html</code> thake — naam bodlabena.</li>
+              <li>GitHub-e notun Public repo baniye file-ta upload kore <strong>Commit</strong> koro.</li>
+              <li>Vercel-e oi repo import kore <strong>Deploy</strong> koro — kono setting bodlate hobe na.</li>
+              <li>Deploy hole Vercel ekta asol address debe — seta Home page-er ghore boshao, tahole sob Copy Link oi address diye hobe.</li>
+              <li>Sesh check: onno ekta phone theke survey link-ta khule dekho — shudhu form ashbe, 404 ashbe na.</li>
+            </ol>
+          </div>
+          <div class="glass gcard">
+            <h3>One honest limitation</h3>
+            <ul>
+              <li>Answers now collect in one shared Admin through the free Vercel KV backend — connect it in the Vercel dashboard under Storage → KV. No Telegram, no other account.</li>
+              <li>If the backend is not connected yet, answers are stored on the visitor's own device only — the Admin badge will say “Shared backend: OFF”.</li>
+              <li>For the assignment demo, submit a few test answers yourself and show them live in the Dashboard.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        SurveyMind AI — AI-Powered Web-Based Survey Software · University Assignment Project<br />
+        Built as a single web page: no Android or iOS app required.
+      </footer>
+    </div>
+
+    <div class="delete-overlay" id="delete-overlay" role="dialog" aria-modal="true" aria-labelledby="delete-title">
+      <div class="delete-box">
+        <h3 id="delete-title">Delete this survey?</h3>
+        <p id="delete-text">This survey and all its answers will be deleted. This cannot be undone.</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="btn btn-delete" id="delete-yes" style="flex:1;">Yes, Delete</button>
+          <button class="btn btn-ghost" id="delete-no" style="flex:1;">No, Keep it</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="copy-fallback" id="copy-fallback" role="dialog" aria-label="Copy the survey link manually">
+      <label for="copy-fallback-input">Automatic copy was blocked in this app. The public link is in the box below — it is already selected, so just press Copy (or long-press it and tap Copy) to take it:</label>
+      <div class="row">
+        <input type="text" id="copy-fallback-input" readonly value="" />
+        <button class="btn btn-ghost btn-sm" id="copy-fallback-close" type="button">Close</button>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+
+    <script>
+    "use strict";
+    /* ==================== DATA ==================== */
+    var seq = 2; // next survey number (SRV-001 is the seed)
+    var surveys = [
+      {
+        id: "s1", code: "SRV-001", ai: false,
+        title: "Student Information Survey",
+        desc: "A basic information survey for students — personal details, educational background and a short feedback rating. Ready to share.",
+        sections: [
+          { title: "Personal Information", desc: "Basic details about the respondent.", questions: [
+            { label: "Full Name", type: "text", required: true, placeholder: "e.g. Ahiyan Rahman" },
+            { label: "Age", type: "number", required: true, placeholder: "e.g. 21" },
+            { label: "Gender", type: "radio", required: true, options: ["Male", "Female", "Other"] },
+            { label: "Present Address", type: "text", required: true, placeholder: "e.g. Mirpur, Dhaka" },
+            { label: "Mobile Number", type: "tel", required: true, placeholder: "e.g. 01XXXXXXXXX" },
+            { label: "Email Address", type: "email", required: false, placeholder: "e.g. name@example.com" }
+          ]},
+          { title: "Educational Information", desc: "Study background and current enrolment.", questions: [
+            { label: "Educational Qualification", type: "select", required: true, options: ["SSC", "HSC", "Diploma", "Bachelor's (Honours)", "Master's", "PhD"] },
+            { label: "University / Institution Name", type: "text", required: true, placeholder: "e.g. University of Dhaka" },
+            { label: "Department", type: "text", required: true, placeholder: "e.g. Computer Science & Engineering" },
+            { label: "Student ID", type: "text", required: false, placeholder: "e.g. 2023-1042" },
+            { label: "Current Semester / Year", type: "select", required: true, options: ["1st Semester", "2nd Semester", "3rd Semester", "4th Semester", "5th Semester", "6th Semester", "7th Semester", "8th Semester"] }
+          ]},
+          { title: "Feedback", desc: "One quick rating before you finish.", questions: [
+            { label: "How was your experience filling up this survey?", type: "rating", required: true }
+          ]}
+        ]
+      }
+    ];
+
+    var responses = [
+      { surveyId: "s1", sample: true, at: "12 Nov, 09:41 AM", answers: { "Full Name": "Tanvir Hasan", "Age": "21", "Gender": "Male", "Present Address": "Uttara, Dhaka", "Mobile Number": "01712345678", "Email Address": "tanvir@example.com", "Educational Qualification": "Bachelor's (Honours)", "University / Institution Name": "University of Dhaka", "Department": "CSE", "Student ID": "2022-0815", "Current Semester / Year": "5th Semester", "How was your experience filling up this survey?": "5" } },
+      { surveyId: "s1", sample: true, at: "12 Nov, 10:03 AM", answers: { "Full Name": "Nusrat Jahan", "Age": "20", "Gender": "Female", "Present Address": "Chattogram", "Mobile Number": "01898765432", "Email Address": "nusrat@example.com", "Educational Qualification": "HSC", "University / Institution Name": "Chattogram College", "Department": "Science", "Student ID": "—", "Current Semester / Year": "2nd Semester", "How was your experience filling up this survey?": "4" } },
+      { surveyId: "s1", sample: true, at: "12 Nov, 11:27 AM", answers: { "Full Name": "Ariful Islam", "Age": "23", "Gender": "Male", "Present Address": "Sylhet", "Mobile Number": "01911223344", "Email Address": "arif@example.com", "Educational Qualification": "Master's", "University / Institution Name": "SUST", "Department": "EEE", "Student ID": "2020-3310", "Current Semester / Year": "8th Semester", "How was your experience filling up this survey?": "5" } },
+      { surveyId: "s1", sample: true, at: "13 Nov, 08:15 AM", answers: { "Full Name": "Sharmin Akter", "Age": "22", "Gender": "Female", "Present Address": "Khulna", "Mobile Number": "01655667788", "Email Address": "sharmin@example.com", "Educational Qualification": "Bachelor's (Honours)", "University / Institution Name": "Khulna University", "Department": "BBA", "Student ID": "2021-0920", "Current Semester / Year": "6th Semester", "How was your experience filling up this survey?": "4" } },
+      { surveyId: "s1", sample: true, at: "13 Nov, 09:52 AM", answers: { "Full Name": "Rahim Uddin", "Age": "19", "Gender": "Male", "Present Address": "Rajshahi", "Mobile Number": "01533445566", "Email Address": "rahim@example.com", "Educational Qualification": "Diploma", "University / Institution Name": "Rajshahi Polytechnic", "Department": "Civil", "Student ID": "2023-4411", "Current Semester / Year": "3rd Semester", "How was your experience filling up this survey?": "3" } },
+      { surveyId: "s1", sample: true, at: "13 Nov, 12:20 PM", answers: { "Full Name": "Farhana Karim", "Age": "24", "Gender": "Female", "Present Address": "Dhanmondi, Dhaka", "Mobile Number": "01366778899", "Email Address": "farhana@example.com", "Educational Qualification": "Bachelor's (Honours)", "University / Institution Name": "BRAC University", "Department": "Architecture", "Student ID": "2019-7730", "Current Semester / Year": "7th Semester", "How was your experience filling up this survey?": "5" } }
+    ];
+
+    var editingId = null;   // survey loaded in the editor
+    var activeFormId = null; // survey open in respondent form
+    var starValue = 0;
+
+    /* ==================== HELPERS ==================== */
+    function $(id) { return document.getElementById(id); }
+    function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+    function surveyById(id) { for (var i = 0; i < surveys.length; i++) if (surveys[i].id === id) return surveys[i]; return null; }
+    function surveyByCode(code) { code = String(code || "").trim().toUpperCase(); for (var i = 0; i < surveys.length; i++) if (surveys[i].code === code) return surveys[i]; return null; }
+    function qCount(s) { var n = 0; s.sections.forEach(function (sec) { n += sec.questions.length; }); return n; }
+    function allQuestions(s) { var out = []; s.sections.forEach(function (sec) { sec.questions.forEach(function (q) { out.push(q); }); }); return out; }
+    function responsesFor(id) { return responses.filter(function (r) { return r.surveyId === id; }); }
+    /* The PUBLIC share link for this page — the only address Copy Link may
+       ever use by default. It opens for anyone, with no sign-in.
+       NEVER build a share link from location.* : inside the Muse app the
+       page is served from an internal gateway address
+       (…cf.metaaiusercontent.com/index.html) that shows "unauthorized"
+       to everyone else. */
+    var PUBLIC_LINK = "https://muse.ai/s/ai-survey-software-public-link-sp6xdxcxamf6xxxq/56AKTtff5fB96XeB2U_Cd-qWN4afko4-_mQoB7Hzfms";
+    function isBannedBase(v) {
+      var s = String(v || "").toLowerCase();
+      return s.indexOf("cf.metaaiusercontent.com") !== -1 ||
+             s.indexOf("metaaiusercontent") !== -1 ||
+             s.indexOf("your-survey.vercel.app") !== -1;
+    }
+    function baseUrl() {
+      /* 1) A real Vercel address typed into the Vercel field wins. */
+      var el = $("base-url");
+      var v = el ? el.value.trim().replace(/\/+$/, "") : "";
+      if (v && /^https?:\/\//i.test(v) && !isBannedBase(v)) return v;
+      /* 2) On a real deployed site (e.g. *.vercel.app), use this site's own address. */
+      var h = (window.location && window.location.hostname) || "";
+      if (h && h.indexOf(".vercel.app") !== -1) return window.location.origin;
+      /* 3) Inside Muse / internal gateway, fall back to the public link. */
+      return PUBLIC_LINK;
+    }
+    function surveyLink(s) {
+      var b = baseUrl();
+      /* Primary share format: base + "?s=CODE" (e.g. …?s=SRV-001).
+         The old hash format (…#/s/CODE) did NOT route to the form on a
+         fresh load of the Muse share link — it opened the full home
+         site instead. The app reads ?s= on load, before first render,
+         and opens ONLY the form. The #/s/CODE hash is still honoured
+         as a fallback (see codeFromUrl), and in-app "Open form" also
+         sets it. */
+      return b + "?s=" + s.code;
+    }
+
+    /* ==================== SHARED BACKEND (Vercel KV) ==================== */
+    /* One Admin for every phone: answers are POSTed to /api/submit (Vercel
+       serverless + Upstash Redis via Vercel KV) and the Admin pulls them
+       back with /api/responses. Survey definitions are synced the same way
+       (/api/survey), so a survey made on one phone opens on any other.
+       No secret lives here — the KV URL/token are Vercel Environment
+       Variables only. If the backend is not connected yet, everything
+       still works exactly as before, on this device only. */
+    var sharedBackendOn = false;
+    function sharedRespKey(r) {
+      return (r.id || "") + "|" + (r.surveyCode || "") + "|" + (r.at || "") + "|" + JSON.stringify(r.answers || {});
+    }
+    function setSharedBadge(on) {
+      sharedBackendOn = !!on;
+      var b = $("shared-badge");
+      if (!b) return;
+      b.textContent = on ? "Shared backend: ON — answers from all phones collect here"
+                         : "Shared backend: OFF — answers on this device only";
+    }
+    function addSharedSurvey(def) {
+      if (!def || !def.code) return null;
+      var ex = surveyByCode(def.code);
+      if (ex) return ex;
+      var s = { id: def.id || ("s-" + def.code), code: def.code, title: def.title || def.code,
+                desc: def.desc || "", sections: def.sections || [], ai: false, shared: true };
+      surveys.push(s);
+      return s;
+    }
+    function mergeSharedResponses(list) {
+      var seen = {}, added = 0;
+      responses.forEach(function (r) { seen[sharedRespKey(r)] = 1; });
+      (list || []).forEach(function (r) {
+        var code = r.surveyCode || "";
+        var sv = code ? surveyByCode(code) : null;
+        if (!sv) return;
+        var item = { surveyId: sv.id, surveyCode: code, sample: false,
+                     at: r.at || "", answers: r.answers || {}, id: r.id || "" };
+        if (seen[sharedRespKey(item)]) return;
+        seen[sharedRespKey(item)] = 1;
+        responses.push(item); added++;
+      });
+      return added;
+    }
+    function postSharedResponse(rec, s) {
+      try {
+        if (typeof fetch !== "function") return;
+        fetch("/api/submit", { method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ surveyCode: s.code,
+            survey: { id: s.id, code: s.code, title: s.title, desc: s.desc, sections: s.sections },
+            answers: rec.answers, submittedAt: rec.at, id: rec.id, at: rec.at }) })
+          .then(function (r) { return r.json(); })
+          .then(function (d) { if (d && d.ok && d.stored) setSharedBadge(true); })
+          .catch(function () {});
+      } catch (e) {}
+    }
+    function syncSurveyDef(s) {
+      try {
+        if (typeof fetch !== "function") return;
+        fetch("/api/survey", { method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ survey: { id: s.id, code: s.code, title: s.title, desc: s.desc, sections: s.sections } }) })
+          .catch(function () {});
+      } catch (e) {}
+    }
+    function fetchSharedSurvey(code) {
+      try {
+        if (typeof fetch !== "function") return;
+        fetch("/api/survey?code=" + encodeURIComponent(code))
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            if (d && d.ok && d.survey) {
+              var s = addSharedSurvey(d.survey);
+              if (s) { renderSurveyLists(); enterRespondentMode(); openForm(s.id); }
+            }
+          }).catch(function () {});
+      } catch (e) {}
+    }
+    function loadSharedResponses() {
+      try {
+        if (typeof fetch !== "function") { setSharedBadge(false); return; }
+        fetch("/api/responses?code=all")
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            if (!d || !d.ok) { setSharedBadge(false); return; }
+            setSharedBadge(true);
+            var newDefs = 0;
+            (d.surveys || []).forEach(function (def) {
+              if (!surveyByCode(def.code)) { addSharedSurvey(def); newDefs++; }
+            });
+            var added = mergeSharedResponses(d.responses || []);
+            if ((added || newDefs) && !document.body.classList.contains("respondent")) {
+              renderHome(); renderSurveyLists(); renderAdmin();
+            }
+          }).catch(function () { setSharedBadge(false); });
+      } catch (e) { setSharedBadge(false); }
+    }
+
+    var toastTimer = null;
+    function toast(msg) {
+      var t = $("toast"); t.textContent = msg; t.classList.add("on");
+      clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.classList.remove("on"); }, 2600);
+    }
+    function showCopyFallback(text) {
+      var box = $("copy-fallback"), inp = $("copy-fallback-input");
+      if (!box || !inp) { toast("Copy failed — the link is shown on the survey card."); return; }
+      inp.value = text;
+      box.classList.add("on");
+      inp.focus();
+      inp.select();
+      try { inp.setSelectionRange(0, inp.value.length); } catch (e) {}
+      toast("Copy blocked here — the link is selected in the box below.");
+    }
+    function hideCopyFallback() { var box = $("copy-fallback"); if (box) box.classList.remove("on"); }
+    function copyText(text, msg) {
+      function done() { hideCopyFallback(); toast(msg || "Link copied — paste it anywhere to share."); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { legacyCopy(); });
+      } else { legacyCopy(); }
+      function legacyCopy() {
+        var ta = document.createElement("textarea");
+        ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta); ta.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(ta);
+        if (ok) done(); else showCopyFallback(text);
+      }
+    }
+    function nowStamp() {
+      var d = new Date();
+      var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      var h = d.getHours(), ap = h >= 12 ? "PM" : "AM"; h = h % 12 || 12;
+      function p(n) { return (n < 10 ? "0" : "") + n; }
+      return d.getDate() + " " + months[d.getMonth()] + ", " + p(h) + ":" + p(d.getMinutes()) + " " + ap;
+    }
+
+    /* ==================== NAVIGATION ==================== */
+    function showView(name) {
+      var views = ["home", "create", "surveys", "respond", "admin", "guide"];
+      views.forEach(function (v) { $("view-" + v).classList.toggle("active", v === name); });
+      document.querySelectorAll(".tab").forEach(function (t) { t.classList.toggle("active", t.getAttribute("data-nav") === name); });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (name === "admin") { renderAdmin(); loadSharedResponses(); }
+      if (name === "surveys") renderSurveyLists();
+      if (name === "home") renderHome();
+    }
+    document.querySelectorAll("[data-nav]").forEach(function (el) {
+      el.addEventListener("click", function () { showView(el.getAttribute("data-nav")); });
+    });
+
+    /* ==================== HOME ==================== */
+    function renderHome() {
+      $("stat-surveys").textContent = surveys.length;
+      $("stat-responses").textContent = responses.length;
+      var seed = surveys[0];
+      if (!seed) {
+        $("stat-questions").textContent = "0";
+        $("home-link").textContent = "No survey yet — create one with the AI Generator.";
+        $("home-qr").innerHTML = "";
+        $("home-survey-grid").innerHTML = '<div class="empty-note">No surveys left. Go to the AI Generator to create a new survey.</div>';
+        return;
+      }
+      $("stat-questions").textContent = qCount(seed);
+      $("home-link").textContent = surveyLink(seed);
+      drawQR($("home-qr"), surveyLink(seed));
+      $("home-survey-grid").innerHTML = surveys.map(surveyCardHTML).join("");
+      bindSurveyCards($("home-survey-grid"));
+    }
+    function drawQR(box, text) {
+      if (!box) return;
+      box.innerHTML = "";
+      try {
+        var qr = qrcode(0, "M");
+        qr.addData(text);
+        qr.make();
+        box.innerHTML = qr.createSvgTag(3, 4);
+        var svg = box.querySelector("svg");
+        if (svg) { svg.style.width = "92px"; svg.style.height = "92px"; svg.style.display = "block"; }
+      } catch (e) {
+        box.innerHTML = '<span style="font:600 .68rem Manrope; color:#333; line-height:1.3; display:block; width:92px; text-align:center;">Link too long<br/>for QR</span>';
+      }
+    }
+    function surveyCardHTML(s) {
+      var rs = responsesFor(s.id);
+      var n = rs.length;
+      var sn = rs.filter(function (r) { return r.sample; }).length;
+      var respChip = n + ' response' + (n === 1 ? "" : "s") + (sn ? ' · ' + sn + ' sample' : "");
+      return '<article class="glass survey-card">' +
+        '<div class="chiprow"><span class="chip code">' + esc(s.code) + '</span>' +
+        (s.ai ? '<span class="chip ai">✦ AI GENERATED</span>' : '<span class="chip">READY-MADE</span>') +
+        '<span class="chip">' + s.sections.length + ' sections</span><span class="chip">' + qCount(s) + ' questions</span>' +
+        '<span class="chip">' + respChip + '</span></div>' +
+        '<h3>' + esc(s.title) + '</h3><p>' + esc(s.desc || "") + '</p>' +
+        '<div class="card-link"><label>PUBLIC LINK — THIS IS WHAT COPY LINK COPIES. GIVE IT TO ANYONE:</label>' +
+        '<input type="text" readonly data-link-input="' + s.id + '" value="' + esc(surveyLink(s)) + '" aria-label="Public link for ' + esc(s.title) + '" /></div>' +
+        '<div class="card-actions">' +
+          '<button class="btn btn-primary btn-sm" data-act="open" data-id="' + s.id + '">Open form</button>' +
+          '<button class="btn btn-ghost btn-sm" data-act="copy" data-id="' + s.id + '">Copy public link</button>' +
+          '<button class="btn btn-ghost btn-sm" data-act="edit" data-id="' + s.id + '">Edit</button>' +
+          '<button class="btn btn-ghost btn-sm" data-act="results" data-id="' + s.id + '">Results</button>' +
+          '<button class="btn btn-delete btn-sm" data-act="delete" data-id="' + s.id + '">Delete</button>' +
+        '</div></article>';
+    }
+    function bindSurveyCards(container) {
+      container.querySelectorAll("[data-link-input]").forEach(function (inp) {
+        inp.addEventListener("click", function () { inp.focus(); inp.select(); try { inp.setSelectionRange(0, inp.value.length); } catch (e) {} });
+        inp.addEventListener("focus", function () { inp.select(); });
+      });
+      container.querySelectorAll("[data-act]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var s = surveyById(b.getAttribute("data-id"));
+          var act = b.getAttribute("data-act");
+          if (act === "open") openForm(s.id);
+          if (act === "copy") copyText(surveyLink(s), "Survey link copied — anyone opening it sees only the form.");
+          if (act === "edit") { loadEditor(s.id); showView("create"); }
+          if (act === "results") { showView("admin"); $("adm-filter").value = s.id; renderAdmin(); }
+          if (act === "delete") requestDelete(s.id);
+        });
+      });
+    }
+    function renderSurveyLists() {
+      if (!surveys.length) {
+        $("all-survey-grid").innerHTML = '<div class="empty-note">No surveys left. Go to the AI Generator to create a new survey.</div>';
+        return;
+      }
+      $("all-survey-grid").innerHTML = surveys.map(surveyCardHTML).join("");
+      bindSurveyCards($("all-survey-grid"));
+    }
+
+    /* ==================== DELETE SURVEY (easy, one tap + Yes/No) ==================== */
+    var pendingDeleteId = null;
+    function requestDelete(id) {
+      var s = surveyById(id);
+      if (!s) return;
+      pendingDeleteId = id;
+      var n = responsesFor(id).length;
+      $("delete-title").textContent = "Delete “" + s.title + "”?";
+      $("delete-text").textContent = "Survey " + s.code + " ar tar " + n + " ta answer ekbare delete hoye jabe. Eta ar ferot ana jabe na. Nischit hole “Yes, Delete” tap koro, na hole “No, Keep it”. (This survey and its " + n + " answer" + (n === 1 ? "" : "s") + " will be deleted forever.)";
+      $("delete-overlay").classList.add("on");
+    }
+    function closeDelete() { pendingDeleteId = null; $("delete-overlay").classList.remove("on"); }
+    function confirmDelete() {
+      var s = surveyById(pendingDeleteId);
+      if (!s) { closeDelete(); return; }
+      var title = s.title;
+      surveys = surveys.filter(function (x) { return x.id !== pendingDeleteId; });
+      responses = responses.filter(function (r) { return r.surveyId !== pendingDeleteId; });
+      if (editingId === pendingDeleteId) { editingId = null; }
+      if (activeFormId === pendingDeleteId) { activeFormId = null; }
+      closeDelete();
+      renderHome(); renderSurveyLists();
+      try { renderAdmin(); } catch (e) {}
+      try { renderEditor(); } catch (e) {}
+      toast("Deleted — “" + title + "” and all its answers are gone.");
+    }
+
+    $("home-copy").addEventListener("click", function () { if (surveys[0]) copyText(surveyLink(surveys[0]), "Survey link copied — anyone opening it sees only the form."); else toast("No survey yet — create one first."); });
+    $("copy-fallback-close").addEventListener("click", hideCopyFallback);
+    $("base-url").addEventListener("input", renderHome);
+</script>
+
+    <script>
+    "use strict";
+    /* ==================== AI GENERATOR ==================== */
+    var TOPIC_IDEAS = ["Student Information", "Customer Feedback", "Online Class Feedback", "Event Registration", "Health & Lifestyle", "Employee Satisfaction", "Product Review", "Restaurant Feedback"];
+    $("topic-chips").innerHTML = TOPIC_IDEAS.map(function (t) { return '<button type="button">' + esc(t) + '</button>'; }).join("");
+    $("topic-chips").querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () { $("ai-topic").value = b.textContent; $("ai-topic").focus(); });
+    });
+
+    function genericSections(topic, audience) {
+      var who = audience || "respondent";
+      return [
+        { title: "Personal Information", desc: "Basic details about the " + who + ".", questions: [
+          { label: "Full Name", type: "text", required: true, placeholder: "Your full name" },
+          { label: "Age", type: "number", required: true, placeholder: "e.g. 22" },
+          { label: "Gender", type: "radio", required: true, options: ["Male", "Female", "Other"] },
+          { label: "Address", type: "text", required: false, placeholder: "City / area" },
+          { label: "Mobile Number", type: "tel", required: true, placeholder: "01XXXXXXXXX" },
+          { label: "Email Address", type: "email", required: false, placeholder: "name@example.com" }
+        ]},
+        { title: "About the Topic", desc: "Questions about " + topic + ".", questions: [
+          { label: "How familiar are you with " + topic + "?", type: "radio", required: true, options: ["Very familiar", "Somewhat familiar", "Not familiar"] },
+          { label: "How often do you take part in activities related to " + topic + "?", type: "select", required: true, options: ["Daily", "Weekly", "Monthly", "Rarely", "Never"] },
+          { label: "What do you like most about " + topic + "?", type: "text", required: false, placeholder: "Write in your own words" },
+          { label: "What is the biggest problem or challenge with " + topic + "?", type: "textarea", required: false, placeholder: "Describe briefly" }
+        ]},
+        { title: "Feedback", desc: "Overall opinion.", questions: [
+          { label: "Overall, how would you rate " + topic + "?", type: "rating", required: true },
+          { label: "Would you recommend " + topic + " to others?", type: "radio", required: true, options: ["Yes", "No", "Maybe"] },
+          { label: "Any other comments or suggestions?", type: "textarea", required: false, placeholder: "Optional" }
+        ]}
+      ];
+    }
+
+    function bankFor(topic) {
+      var t = topic.toLowerCase();
+      if (/(student|education|university|admission|school|college)/.test(t)) {
+        return [
+          { title: "Personal Information", desc: "Basic details about the student.", questions: [
+            { label: "Full Name", type: "text", required: true, placeholder: "e.g. Ahiyan Rahman" },
+            { label: "Age", type: "number", required: true, placeholder: "e.g. 21" },
+            { label: "Gender", type: "radio", required: true, options: ["Male", "Female", "Other"] },
+            { label: "Present Address", type: "text", required: true, placeholder: "e.g. Mirpur, Dhaka" },
+            { label: "Mobile Number", type: "tel", required: true, placeholder: "01XXXXXXXXX" },
+            { label: "Email Address", type: "email", required: false, placeholder: "name@example.com" }
+          ]},
+          { title: "Educational Information", desc: "Study background and enrolment.", questions: [
+            { label: "Educational Qualification", type: "select", required: true, options: ["SSC", "HSC", "Diploma", "Bachelor's (Honours)", "Master's", "PhD"] },
+            { label: "University / Institution Name", type: "text", required: true, placeholder: "Your university" },
+            { label: "Department", type: "text", required: true, placeholder: "e.g. CSE" },
+            { label: "Student ID", type: "text", required: false, placeholder: "e.g. 2023-1042" },
+            { label: "Current Semester / Year", type: "select", required: true, options: ["1st Semester", "2nd Semester", "3rd Semester", "4th Semester", "5th Semester", "6th Semester", "7th Semester", "8th Semester"] }
+          ]},
+          { title: "Feedback", desc: "One quick rating.", questions: [
+            { label: "How was your experience filling up this survey?", type: "rating", required: true }
+          ]}
+        ];
+      }
+      if (/(customer|product|shop|service|restaurant|food|review)/.test(t)) {
+        return [
+          { title: "Customer Details", desc: "A little about you.", questions: [
+            { label: "Full Name", type: "text", required: true, placeholder: "Your name" },
+            { label: "Age Group", type: "select", required: true, options: ["Under 18", "18–25", "26–35", "36–50", "Above 50"] },
+            { label: "Mobile Number", type: "tel", required: true, placeholder: "01XXXXXXXXX" },
+            { label: "How did you hear about us?", type: "radio", required: false, options: ["Facebook", "Friend / Family", "Advertisement", "Walk-in", "Other"] }
+          ]},
+          { title: "Your Experience", desc: "Tell us how we did.", questions: [
+            { label: "How satisfied are you with our product / service quality?", type: "rating", required: true },
+            { label: "How satisfied are you with our price?", type: "rating", required: true },
+            { label: "How was our delivery / staff behaviour?", type: "radio", required: true, options: ["Excellent", "Good", "Average", "Poor"] },
+            { label: "What did you like the most?", type: "text", required: false, placeholder: "Write briefly" }
+          ]},
+          { title: "Recommendation", desc: "Final words.", questions: [
+            { label: "Would you buy from us again?", type: "radio", required: true, options: ["Definitely yes", "Probably", "Not sure", "No"] },
+            { label: "Would you recommend us to others?", type: "radio", required: true, options: ["Yes", "No", "Maybe"] },
+            { label: "Any suggestion to improve?", type: "textarea", required: false, placeholder: "Optional" }
+          ]}
+        ];
+      }
+      if (/(class|course|teacher|learning|training|online)/.test(t)) {
+        return [
+          { title: "Student Details", desc: "A little about you.", questions: [
+            { label: "Full Name", type: "text", required: true, placeholder: "Your name" },
+            { label: "University / Institution Name", type: "text", required: true, placeholder: "Your institution" },
+            { label: "Department", type: "text", required: false, placeholder: "e.g. CSE" },
+            { label: "Current Semester / Year", type: "select", required: true, options: ["1st Semester", "2nd Semester", "3rd Semester", "4th Semester", "5th Semester", "6th Semester", "7th Semester", "8th Semester"] }
+          ]},
+          { title: "Class Experience", desc: "About the classes themselves.", questions: [
+            { label: "How clear were the lessons?", type: "rating", required: true },
+            { label: "How helpful was the teacher?", type: "rating", required: true },
+            { label: "Did you face any technical problems?", type: "radio", required: true, options: ["No problems", "Sometimes", "Often"] },
+            { label: "Which part of the course helped you most?", type: "text", required: false, placeholder: "Write briefly" }
+          ]},
+          { title: "Overall Feedback", desc: "Final opinion.", questions: [
+            { label: "Overall, how would you rate the course?", type: "rating", required: true },
+            { label: "Would you recommend this course to other students?", type: "radio", required: true, options: ["Yes", "No", "Maybe"] },
+            { label: "Any suggestion to improve the class?", type: "textarea", required: false, placeholder: "Optional" }
+          ]}
+        ];
+      }
+      if (/(event|registration|seminar|workshop|conference)/.test(t)) {
+        return [
+          { title: "Participant Details", desc: "Who is registering.", questions: [
+            { label: "Full Name", type: "text", required: true, placeholder: "Your name" },
+            { label: "Email Address", type: "email", required: true, placeholder: "name@example.com" },
+            { label: "Mobile Number", type: "tel", required: true, placeholder: "01XXXXXXXXX" },
+            { label: "Occupation", type: "select", required: true, options: ["Student", "Teacher", "Job holder", "Business", "Other"] }
+          ]},
+          { title: "Event Choices", desc: "Your preferences.", questions: [
+            { label: "Which session will you attend?", type: "radio", required: true, options: ["Morning session", "Afternoon session", "Full day"] },
+            { label: "How many guests will come with you?", type: "number", required: false, placeholder: "0" },
+            { label: "Do you need a certificate?", type: "radio", required: true, options: ["Yes", "No"] },
+            { label: "What do you hope to learn from this event?", type: "textarea", required: false, placeholder: "Optional" }
+          ]},
+          { title: "Confirmation", desc: "Almost done.", questions: [
+            { label: "How did you hear about this event?", type: "select", required: false, options: ["Facebook", "University notice", "Friend", "Website", "Other"] },
+            { label: "Any special requirement we should know?", type: "text", required: false, placeholder: "Optional" }
+          ]}
+        ];
+      }
+      if (/(health|lifestyle|fitness|diet|exercise)/.test(t)) {
+        return [
+          { title: "Personal Information", desc: "Basic details.", questions: [
+            { label: "Full Name", type: "text", required: true, placeholder: "Your name" },
+            { label: "Age", type: "number", required: true, placeholder: "e.g. 25" },
+            { label: "Gender", type: "radio", required: true, options: ["Male", "Female", "Other"] },
+            { label: "Address", type: "text", required: false, placeholder: "City / area" }
+          ]},
+          { title: "Lifestyle Habits", desc: "Daily routine.", questions: [
+            { label: "How many hours do you sleep per night?", type: "select", required: true, options: ["Less than 5", "5–6", "7–8", "More than 8"] },
+            { label: "How often do you exercise?", type: "select", required: true, options: ["Daily", "3–4 times a week", "Once a week", "Rarely", "Never"] },
+            { label: "How many glasses of water do you drink daily?", type: "radio", required: false, options: ["Less than 4", "4–6", "7–8", "More than 8"] },
+            { label: "Do you eat fast food regularly?", type: "radio", required: true, options: ["Yes", "No", "Sometimes"] }
+          ]},
+          { title: "Wellbeing", desc: "How you feel overall.", questions: [
+            { label: "How would you rate your overall health?", type: "rating", required: true },
+            { label: "What is your biggest health goal right now?", type: "text", required: false, placeholder: "Write briefly" }
+          ]}
+        ];
+      }
+      if (/(employee|job|workplace|office|staff)/.test(t)) {
+        return [
+          { title: "Employee Details", desc: "A little about you (anonymous is fine).", questions: [
+            { label: "Department", type: "select", required: true, options: ["HR", "Sales", "Accounts", "Operations", "IT", "Other"] },
+            { label: "How long have you worked here?", type: "select", required: true, options: ["Less than 1 year", "1–3 years", "3–5 years", "More than 5 years"] },
+            { label: "Age Group", type: "select", required: false, options: ["Under 25", "25–35", "36–45", "Above 45"] }
+          ]},
+          { title: "Work Experience", desc: "Your day-to-day experience.", questions: [
+            { label: "How satisfied are you with your current role?", type: "rating", required: true },
+            { label: "How is your relationship with your team?", type: "radio", required: true, options: ["Excellent", "Good", "Average", "Needs improvement"] },
+            { label: "Do you get enough support from management?", type: "radio", required: true, options: ["Always", "Usually", "Rarely", "Never"] },
+            { label: "What is the best part of working here?", type: "text", required: false, placeholder: "Write briefly" }
+          ]},
+          { title: "Suggestions", desc: "Help us improve.", questions: [
+            { label: "Would you recommend this workplace to a friend?", type: "radio", required: true, options: ["Yes", "No", "Maybe"] },
+            { label: "One thing the company should improve:", type: "textarea", required: false, placeholder: "Optional" }
+          ]}
+        ];
+      }
+      return null;
+    }
+
+    var thinkSteps = ["Reading your topic…", "Choosing the best sections…", "Writing questions & answer options…", "Polishing the survey…"];
+    $("ai-generate").addEventListener("click", function () {
+      var topic = $("ai-topic").value.trim();
+      if (!topic) { toast("Write a topic first — e.g. “Student Information”."); $("ai-topic").focus(); return; }
+      var audience = $("ai-audience").value.trim();
+      var btn = $("ai-generate"), th = $("ai-thinking"), tt = $("ai-thinking-text");
+      btn.disabled = true; th.classList.add("on");
+      var i = 0; tt.textContent = thinkSteps[0];
+      var iv = setInterval(function () { i = (i + 1) % thinkSteps.length; tt.textContent = thinkSteps[i]; }, 550);
+      setTimeout(function () {
+        clearInterval(iv); th.classList.remove("on"); btn.disabled = false;
+        var secs = bankFor(topic) || genericSections(topic, audience);
+        var s = {
+          id: "s" + Date.now(), code: "SRV-" + String(seq++).padStart(3, "0"), ai: true,
+          title: topic.replace(/\b\w/g, function (c) { return c.toUpperCase(); }) + (/\bsurvey\b/i.test(topic) ? "" : " Survey"),
+          desc: "AI-generated survey about “" + topic + "”" + (audience ? " for " + audience : "") + ". Review it in the editor, then publish to share.",
+          sections: secs
+        };
+        surveys.push(s);
+        loadEditor(s.id);
+        toast("AI created “" + s.title + "” — review it, then publish.");
+      }, 2300);
+    });
+
+    $("blank-create").addEventListener("click", function () {
+      var s = {
+        id: "s" + Date.now(), code: "SRV-" + String(seq++).padStart(3, "0"), ai: false,
+        title: "Untitled Survey", desc: "",
+        sections: [{ title: "Section 1", desc: "", questions: [{ label: "Your first question", type: "text", required: true, placeholder: "" }] }]
+      };
+      surveys.push(s);
+      loadEditor(s.id);
+      toast("Blank survey created — add your questions, then publish.");
+    });
+
+    /* ==================== EDITOR ==================== */
+    var TYPE_OPTS = [["text", "Short text"], ["number", "Number"], ["email", "Email"], ["tel", "Phone"], ["date", "Date"], ["select", "Dropdown"], ["radio", "Multiple choice"], ["rating", "Star rating"], ["textarea", "Long text"]];
+    function loadEditor(id) {
+      editingId = id;
+      renderEditor();
+    }
+    function renderEditor() {
+      var s = surveyById(editingId);
+      var body = $("editor-body");
+      if (!s) { body.innerHTML = '<div class="empty-note">No survey in the editor yet.</div>'; return; }
+      var h = '<div class="field"><label>SURVEY TITLE</label><input type="text" id="ed-title" value="' + esc(s.title) + '" /></div>' +
+        '<div class="field" style="margin-top:10px;"><label>SHORT DESCRIPTION</label><input type="text" id="ed-desc" value="' + esc(s.desc || "") + '" placeholder="One line about this survey" /></div>' +
+        '<div class="chiprow" style="margin-top:12px;"><span class="chip code">' + esc(s.code) + '</span><span class="chip">' + s.sections.length + ' sections</span><span class="chip">' + qCount(s) + ' questions</span></div>';
+      s.sections.forEach(function (sec, si) {
+        h += '<div class="sec-title">Section ' + (si + 1) + ' — ' + esc(sec.title) + '</div>';
+        sec.questions.forEach(function (q, qi) {
+          var opts = TYPE_OPTS.map(function (o) { return '<option value="' + o[0] + '"' + (q.type === o[0] ? " selected" : "") + '>' + o[1] + '</option>'; }).join("");
+          h += '<div class="qedit"><div class="row">' +
+            '<input type="text" data-f="label" data-s="' + si + '" data-q="' + qi + '" value="' + esc(q.label) + '" aria-label="Question text" />' +
+            '<select data-f="type" data-s="' + si + '" data-q="' + qi + '" aria-label="Answer type">' + opts + '</select>' +
+            '<button class="btn btn-danger btn-sm del" data-del="' + si + ':' + qi + '">Remove</button></div>' +
+            ((q.type === "select" || q.type === "radio") ? '<input type="text" style="margin-top:8px;" data-f="options" data-s="' + si + '" data-q="' + qi + '" value="' + esc((q.options || []).join(", ")) + '" placeholder="Options, comma separated" aria-label="Options" />' : '') +
+            '</div>';
+        });
+        h += '<button class="btn btn-ghost btn-sm" data-addq="' + si + '">+ Add question to this section</button>';
+      });
+      h += '<div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:20px;">' +
+        '<button class="btn btn-ghost btn-sm" id="ed-addsec">+ Add section</button>' +
+        '<button class="btn btn-primary" id="ed-publish" style="flex:1;">Publish & get shareable link →</button></div>' +
+        '<div id="ed-link"></div>';
+      body.innerHTML = h;
+
+      $("ed-title").addEventListener("input", function () { s.title = this.value; });
+      $("ed-desc").addEventListener("input", function () { s.desc = this.value; });
+      body.querySelectorAll("[data-f]").forEach(function (inp) {
+        inp.addEventListener("change", function () {
+          var q = s.sections[+inp.getAttribute("data-s")].questions[+inp.getAttribute("data-q")];
+          var f = inp.getAttribute("data-f");
+          if (f === "label") q.label = inp.value;
+          if (f === "type") { q.type = inp.value; if ((q.type === "select" || q.type === "radio") && !q.options) q.options = ["Option 1", "Option 2"]; renderEditor(); }
+          if (f === "options") q.options = inp.value.split(",").map(function (x) { return x.trim(); }).filter(Boolean);
+        });
+      });
+      body.querySelectorAll("[data-del]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var p = b.getAttribute("data-del").split(":");
+          s.sections[+p[0]].questions.splice(+p[1], 1);
+          renderEditor();
+        });
+      });
+      body.querySelectorAll("[data-addq]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          s.sections[+b.getAttribute("data-addq")].questions.push({ label: "New question", type: "text", required: false, placeholder: "" });
+          renderEditor();
+        });
+      });
+      $("ed-addsec").addEventListener("click", function () {
+        s.sections.push({ title: "Section " + (s.sections.length + 1), desc: "", questions: [{ label: "New question", type: "text", required: false, placeholder: "" }] });
+        renderEditor();
+      });
+      $("ed-publish").addEventListener("click", function () {
+        renderHome(); renderSurveyLists(); syncSurveyDef(s);
+        $("ed-link").innerHTML = '<div class="linkbox" style="margin-top:16px;"><span class="url">' + esc(surveyLink(s)) + '</span>' +
+          '<button class="btn btn-primary btn-sm" id="ed-copy">Copy public link</button></div>' +
+          '<button class="btn btn-coral" id="ed-open" style="width:100%;">Preview the form →</button>';
+        $("ed-copy").addEventListener("click", function () { copyText(surveyLink(s), "Survey link copied — anyone opening it sees only the form."); });
+        $("ed-open").addEventListener("click", function () { openForm(s.id); });
+        toast("Published! “" + s.title + "” is live at code " + s.code + ".");
+      });
+    }
+</script>
+
+    <script>
+    "use strict";
+    /* ==================== RESPONDENT FORM ==================== */
+    function openForm(id) {
+      var s = surveyById(id);
+      if (!s) { toast("Survey not found."); return; }
+      activeFormId = id; starValue = 0;
+      try { history.replaceState(null, "", "#/s/" + s.code); } catch (e) {}
+      var h = '<div class="glass form-head">' +
+        '<span class="chip code">' + esc(s.code) + '</span>' +
+        '<h2>' + esc(s.title) + '</h2><p>' + esc(s.desc || "Please answer all the questions below and press Submit.") + '</p>' +
+        '<div class="progress"><div id="form-progress"></div></div>' +
+        '<p style="margin:8px 0 0; font-size:.8rem; color:var(--ink-faint);"><span id="form-progress-text">0</span> of ' + qCount(s) + ' questions answered · Fields marked <span style="color:var(--coral);">*</span> are required</p></div>';
+      s.sections.forEach(function (sec, si) {
+        h += '<div class="glass form-sec"><h3><span class="sn">' + (si + 1) + '</span>' + esc(sec.title) + '</h3>' +
+          (sec.desc ? '<p class="sdesc">' + esc(sec.desc) + '</p>' : '<div style="height:10px"></div>');
+        sec.questions.forEach(function (q, qi) {
+          var key = si + ":" + qi;
+          h += '<div class="fq" data-key="' + key + '"><label class="q" for="f-' + key + '">' + esc(q.label) + (q.required ? ' <span class="req">*</span>' : '') + '</label>';
+          if (q.type === "text" || q.type === "number" || q.type === "email" || q.type === "tel" || q.type === "date") {
+            h += '<input type="' + q.type + '" id="f-' + key + '" data-q="' + key + '" placeholder="' + esc(q.placeholder || "") + '" />';
+          } else if (q.type === "textarea") {
+            h += '<textarea id="f-' + key + '" data-q="' + key + '" placeholder="' + esc(q.placeholder || "") + '"></textarea>';
+          } else if (q.type === "select") {
+            h += '<select id="f-' + key + '" data-q="' + key + '"><option value="">— Select —</option>' + (q.options || []).map(function (o) { return '<option>' + esc(o) + '</option>'; }).join("") + '</select>';
+          } else if (q.type === "radio") {
+            h += '<div class="opts">' + (q.options || []).map(function (o) {
+              return '<label class="opt"><input type="radio" name="r-' + key + '" value="' + esc(o) + '" data-q="' + key + '" /> ' + esc(o) + '</label>';
+            }).join("") + '</div>';
+          } else if (q.type === "rating") {
+            h += '<div class="stars" data-stars="' + key + '">' + [1, 2, 3, 4, 5].map(function (n) { return '<button type="button" data-star="' + n + '" aria-label="' + n + ' star">★</button>'; }).join("") + '</div>';
+          }
+          h += '<div class="err">This question is required.</div></div>';
+        });
+        h += '</div>';
+      });
+      h += '<button class="btn btn-primary" id="form-submit" style="width:100%; padding:15px; font-size:1rem;">Submit my answers ✓</button>' +
+        '<p style="text-align:center; color:var(--ink-faint); font-size:.82rem; margin:12px 0 30px;">Your answers go straight to the survey admin dashboard.</p>';
+      $("form-shell").innerHTML = h;
+      showView("respond");
+      bindForm(s);
+    }
+
+    function collectAnswers(s) {
+      var answers = {}, valid = true, firstBad = null;
+      s.sections.forEach(function (sec, si) {
+        sec.questions.forEach(function (q, qi) {
+          var key = si + ":" + qi, val = "";
+          if (q.type === "radio") {
+            var r = document.querySelector('input[name="r-' + key + '"]:checked');
+            val = r ? r.value : "";
+          } else if (q.type === "rating") {
+            val = starValue ? String(starValue) : "";
+          } else {
+            var inp = document.querySelector('[data-q="' + key + '"]');
+            val = inp ? inp.value.trim() : "";
+          }
+          answers[q.label] = val;
+          var wrap = document.querySelector('.fq[data-key="' + key + '"]');
+          var bad = q.required && !val;
+          if (q.type === "email" && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) bad = true;
+          if (wrap) wrap.classList.toggle("invalid", bad);
+          if (bad) { valid = false; if (!firstBad) firstBad = wrap; }
+        });
+      });
+      return { answers: answers, valid: valid, firstBad: firstBad };
+    }
+
+    function updateProgress(s) {
+      var total = qCount(s), done = 0;
+      var got = collectAnswersQuiet(s);
+      allQuestions(s).forEach(function (q) { if (got[q.label]) done++; });
+      var pct = total ? Math.round(done / total * 100) : 0;
+      var bar = $("form-progress"), txt = $("form-progress-text");
+      if (bar) bar.style.width = pct + "%";
+      if (txt) txt.textContent = done;
+    }
+    function collectAnswersQuiet(s) {
+      var answers = {};
+      s.sections.forEach(function (sec, si) {
+        sec.questions.forEach(function (q, qi) {
+          var key = si + ":" + qi;
+          if (q.type === "radio") { var r = document.querySelector('input[name="r-' + key + '"]:checked'); answers[q.label] = r ? r.value : ""; }
+          else if (q.type === "rating") { answers[q.label] = starValue ? String(starValue) : ""; }
+          else { var inp = document.querySelector('[data-q="' + key + '"]'); answers[q.label] = inp ? inp.value.trim() : ""; }
+        });
+      });
+      return answers;
+    }
+
+    function bindForm(s) {
+      $("form-shell").querySelectorAll("[data-stars]").forEach(function (box) {
+        box.querySelectorAll("[data-star]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            starValue = +b.getAttribute("data-star");
+            box.querySelectorAll("[data-star]").forEach(function (x) { x.classList.toggle("on", +x.getAttribute("data-star") <= starValue); });
+            updateProgress(s);
+          });
+        });
+      });
+      $("form-shell").querySelectorAll("input, select, textarea").forEach(function (el) {
+        el.addEventListener("input", function () { updateProgress(s); });
+        el.addEventListener("change", function () { updateProgress(s); });
+      });
+      updateProgress(s);
+      $("form-submit").addEventListener("click", function () {
+        var res = collectAnswers(s);
+        if (!res.valid) {
+          toast("Please answer the highlighted questions.");
+          if (res.firstBad) res.firstBad.scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
+        var rec = { id: "r" + Date.now().toString(36) + Math.floor(Math.random() * 1e6).toString(36),
+                     surveyId: s.id, surveyCode: s.code, sample: false, at: nowStamp(), answers: res.answers };
+        responses.push(rec);
+        postSharedResponse(rec, s);
+        /* Respondent mode (opened via a share link) is fully locked: the
+           Thank You screen offers NO route to the Admin Dashboard or the
+           home page — only the option to fill the form in again. The owner
+           previewing the form from inside the app keeps the shortcuts. */
+        var locked = document.body.classList.contains("respondent");
+        $("form-shell").innerHTML = '<div class="glass success">' +
+          '<div class="tick"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>' +
+          '<h2>Thank you! Your response is recorded.</h2>' +
+          (locked
+            ? '<p>Your answers for <strong>' + esc(s.title) + '</strong> (' + esc(s.code) + ') have been submitted successfully. You can now close this page.</p>'
+            : '<p>Your answers for <strong>' + esc(s.title) + '</strong> (' + esc(s.code) + ') have been submitted and are now visible in the Admin Dashboard.</p>') +
+          '<div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">' +
+          (locked ? '' : '<button class="btn btn-primary" id="succ-admin">View in Admin Dashboard</button>') +
+          '<button class="btn btn-ghost" id="succ-again">Submit another response</button>' +
+          (locked ? '' : '<button class="btn btn-ghost" id="succ-home">Back to home</button>') + '</div></div>';
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (!locked) {
+          $("succ-admin").addEventListener("click", function () { exitRespondentMode(); showView("admin"); });
+          $("succ-home").addEventListener("click", function () { exitRespondentMode(); showView("home"); });
+        }
+        $("succ-again").addEventListener("click", function () { openForm(s.id); });
+      });
+    }
+
+    /* ==================== ADMIN ==================== */
+    function barChartHTML(pairs, maxOverride) {
+      if (!pairs.length) return '<div class="empty-note">No data yet — submit a response to see this chart.</div>';
+      var max = maxOverride || Math.max.apply(null, pairs.map(function (p) { return p[1]; }).concat([1]));
+      return pairs.map(function (p) {
+        return '<div class="bar-row"><span class="bl" title="' + esc(p[0]) + '">' + esc(p[0]) + '</span>' +
+          '<span class="bar-track"><span class="bar-fill" style="width:' + Math.round(p[1] / max * 100) + '%"></span></span>' +
+          '<span class="bv">' + p[1] + '</span></div>';
+      }).join("");
+    }
+    function renderAdmin() {
+      var admGrid = $("adm-survey-grid");
+      if (admGrid) {
+        admGrid.innerHTML = surveys.length ? surveys.map(surveyCardHTML).join("") : '<div class="empty-note">No surveys left. Go to the AI Generator to create a new survey.</div>';
+        bindSurveyCards(admGrid);
+      }
+      var filter = $("adm-filter");
+      var cur = filter.value;
+      filter.innerHTML = '<option value="all">All surveys</option>' + surveys.map(function (s) { return '<option value="' + s.id + '">' + esc(s.title) + ' (' + esc(s.code) + ')</option>'; }).join("");
+      filter.value = surveys.some(function (s) { return s.id === cur; }) ? cur : "all";
+
+      $("adm-total").textContent = responses.length;
+      $("adm-surveys").textContent = surveys.length;
+      var seedRs = surveys[0] ? responsesFor(surveys[0].id) : [];
+      var rq = surveys[0] ? allQuestions(surveys[0]).filter(function (q) { return q.type === "rating"; })[0] : null;
+      if (rq && seedRs.length) {
+        var sum = 0; seedRs.forEach(function (r) { sum += parseFloat(r.answers[rq.label]) || 0; });
+        $("adm-avg").textContent = "★ " + (sum / seedRs.length).toFixed(1);
+      } else { $("adm-avg").textContent = "—"; }
+      $("adm-latest").textContent = responses.length ? responses[responses.length - 1].at : "—";
+
+      /* Chart 1: responses per survey */
+      $("chart1").innerHTML = barChartHTML(surveys.map(function (s) { return [s.code + " · " + s.title, responsesFor(s.id).length]; }));
+
+      /* Table + chart 2 scope */
+      var selId = filter.value;
+      var list = selId === "all" ? responses.slice() : responsesFor(selId);
+      var baseSurvey = selId === "all" ? surveys[0] : surveyById(selId);
+      var qs = baseSurvey ? allQuestions(baseSurvey) : [];
+      var table = $("adm-table");
+      if (!list.length) {
+        table.innerHTML = '<tr><td style="text-align:center; padding:26px; color:var(--ink-faint);">No responses yet for this selection. Open the survey form and submit a test answer.</td></tr>';
+      } else {
+        var head = "<tr><th>#</th><th>Submitted</th>" + (selId === "all" ? "<th>Survey</th>" : "") + qs.map(function (q) { return "<th>" + esc(q.label) + "</th>"; }).join("") + "</tr>";
+        var rows = list.map(function (r, i) {
+          var sv = surveyById(r.surveyId);
+          var cells = qs.map(function (q) {
+            var v = r.answers[q.label];
+            if (q.type === "rating" && v) v = "★ " + v;
+            return "<td>" + esc(v || "—") + "</td>";
+          }).join("");
+          return "<tr><td>" + (i + 1) + (r.sample ? '<span class="sample-tag">SAMPLE</span>' : "") + "</td><td>" + esc(r.at) + "</td>" +
+            (selId === "all" ? "<td>" + esc(sv ? sv.code : "") + "</td>" : "") + cells + "</tr>";
+        }).join("");
+        table.innerHTML = head + rows;
+      }
+
+      /* Chart 2: breakdown of first choice/rating question */
+      var chartQ = qs.filter(function (q) { return q.type === "select" || q.type === "radio" || q.type === "rating"; })[0];
+      if (chartQ && baseSurvey) {
+        $("chart2-title").textContent = "Breakdown — " + chartQ.label;
+        $("chart2-sub").textContent = "From " + (selId === "all" ? "the ready survey" : baseSurvey.title);
+        var counts = {};
+        responsesFor(baseSurvey.id).forEach(function (r) { var v = r.answers[chartQ.label]; if (v) counts[v] = (counts[v] || 0) + 1; });
+        $("chart2").innerHTML = barChartHTML(Object.keys(counts).map(function (k) { return [(chartQ.type === "rating" ? "★ " + k : k), counts[k]]; }).sort(function (a, b) { return b[1] - a[1]; }));
+      } else {
+        $("chart2-title").textContent = "Answer breakdown";
+        $("chart2").innerHTML = '<div class="empty-note">This survey has no multiple-choice or rating question to chart.</div>';
+      }
+
+      /* AI insights */
+      var ins = [];
+      ins.push(responses.length + " response" + (responses.length === 1 ? "" : "s") + " collected across " + surveys.length + " survey" + (surveys.length === 1 ? "" : "s") + ".");
+      if (rq && seedRs.length) {
+        var s2 = 0; seedRs.forEach(function (r) { s2 += parseFloat(r.answers[rq.label]) || 0; });
+        ins.push("Average experience rating on the ready survey is " + (s2 / seedRs.length).toFixed(1) + " out of 5 — " + ((s2 / seedRs.length) >= 4 ? "respondents find the form easy to complete." : "consider shortening the form to lift scores."));
+      }
+      var qualQ = qs.filter(function (q) { return q.type === "select"; })[0];
+      if (qualQ && baseSurvey) {
+        var qc = {};
+        responsesFor(baseSurvey.id).forEach(function (r) { var v = r.answers[qualQ.label]; if (v) qc[v] = (qc[v] || 0) + 1; });
+        var top = Object.keys(qc).sort(function (a, b) { return qc[b] - qc[a]; })[0];
+        if (top) ins.push("Most common answer for “" + qualQ.label + "”: " + top + " (" + qc[top] + " response" + (qc[top] === 1 ? "" : "s") + ").");
+      }
+      if (responses.some(function (r) { return r.sample; })) ins.push("Some rows are marked SAMPLE — starter data for the demo. Use “Clear sample data” to keep only real submissions.");
+      $("adm-insights").innerHTML = "<h3>✦ AI Insights</h3><ul>" + ins.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>";
+    }
+    $("adm-filter").addEventListener("change", renderAdmin);
+    $("adm-refresh-shared").addEventListener("click", function () { loadSharedResponses(); toast("Checking the shared backend for new answers…"); });
+    $("adm-clear-samples").addEventListener("click", function () {
+      var before = responses.length;
+      responses = responses.filter(function (r) { return !r.sample; });
+      renderAdmin(); renderHome();
+      toast(before === responses.length ? "No sample data to clear." : "Sample data cleared — only real submissions remain.");
+    });
+    $("adm-csv").addEventListener("click", function () {
+      var selId = $("adm-filter").value;
+      var list = selId === "all" ? responses : responsesFor(selId);
+      if (!list.length) { toast("No responses to download yet."); return; }
+      var cols = ["Submitted", "Survey Code"];
+      var seen = {};
+      list.forEach(function (r) { Object.keys(r.answers).forEach(function (k) { if (!seen[k]) { seen[k] = 1; cols.push(k); } }); });
+      function cell(v) { v = String(v == null ? "" : v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
+      var lines = [cols.map(cell).join(",")];
+      list.forEach(function (r) {
+        var sv = surveyById(r.surveyId);
+        lines.push(cols.map(function (c) {
+          if (c === "Submitted") return cell(r.at);
+          if (c === "Survey Code") return cell(sv ? sv.code : "");
+          return cell(r.answers[c] || "");
+        }).join(","));
+      });
+      var blob = new Blob(["\ufeff" + lines.join("\n")], { type: "text/csv;charset=utf-8" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "survey-responses.csv";
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 400);
+      toast("CSV downloaded — open it in Excel or Google Sheets.");
+    });
+
+    /* ==================== GUIDE: DOWNLOAD PAGE ==================== */
+    $("dl-html").addEventListener("click", function () {
+      var html = "<!doctype html>\n" + document.documentElement.outerHTML;
+      var blob = new Blob([html], { type: "text/html;charset=utf-8" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "index.html";
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 400);
+      toast("index.html downloaded — upload this file to GitHub next.");
+    });
+
+    /* ==================== INIT + SHARE-LINK ROUTING ==================== */
+    /* Opening a share link (…?s=SRV-001 — the older …#/s/SRV-001 hash
+       form still works too) puts the page in respondent mode:
+       the visitor sees ONLY the survey form — no nav, no home page, no code
+       to type, no sign-in. Submitting adds the answer to the same in-memory
+       response list the Admin Dashboard renders. */
+    function enterRespondentMode() { document.body.classList.add("respondent"); }
+    function exitRespondentMode() {
+      if (!document.body.classList.contains("respondent")) return;
+      document.body.classList.remove("respondent");
+      try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {}
+    }
+    function codeFromUrl() {
+      var code = null, m;
+      /* Primary: the ?s=CODE query parameter — read first, on load,
+         before anything renders. */
+      m = /[?&]s=([A-Za-z0-9-]+)/.exec(location.search || "");
+      if (m) code = m[1];
+      /* Fallbacks: the older #/s/CODE hash form, an s= tucked into the
+         hash, and a /s/CODE path segment. */
+      if (!code) { m = /#\/?s\/([A-Za-z0-9-]+)/.exec(location.hash || ""); if (m) code = m[1]; }
+      if (!code) { m = /[#?&]s=([A-Za-z0-9-]+)/.exec(location.hash || ""); if (m) code = m[1]; }
+      if (!code) { m = /\/s\/([A-Za-z0-9-]+)/.exec(location.pathname || ""); if (m) code = m[1]; }
+      return code;
+    }
+    function routeFromUrl() {
+      var code = codeFromUrl();
+      if (!code) return false;
+      var s = surveyByCode(code);
+      if (!s) { fetchSharedSurvey(code); return false; }
+      enterRespondentMode();
+      openForm(s.id);
+      return true;
+    }
+    window.addEventListener("hashchange", function () {
+      /* Respondent mode stays locked: once a share link has opened the
+         form, changing or clearing the hash must NOT reveal the home page
+         or the Admin Dashboard. A different survey code in the hash just
+         swaps to that form. The full app (with Admin) opens only from a
+         fresh load of the plain home address, with no survey code. */
+      routeFromUrl();
+    });
+    $("delete-yes").addEventListener("click", confirmDelete);
+    $("delete-no").addEventListener("click", closeDelete);
+    $("delete-overlay").addEventListener("click", function (e) { if (e.target === this) closeDelete(); });
+    /* Route FIRST, before painting the home page, so a shared link opens
+       ONLY the form. Retry briefly in case the address arrives a moment
+       late inside the app frame. */
+    var routed = routeFromUrl();
+    if (!routed) {
+      renderHome();
+      renderSurveyLists();
+      var tries = 0;
+      var iv = setInterval(function () {
+        tries++;
+        if (routeFromUrl() || tries >= 6) clearInterval(iv);
+      }, 150);
+    }
+    loadSharedResponses();
+    </script>
+  </body>
+</html>
