@@ -64,6 +64,7 @@ module.exports = async function (req, res) {
     try {
       await kvCall(url, token, "/set/survey:def:" + code + "/" + encodeURIComponent(JSON.stringify(def)), "POST");
       await kvCall(url, token, "/sadd/survey:codes/" + encodeURIComponent(code), "POST");
+      await kvCall(url, token, "/srem/survey:deleted/" + encodeURIComponent(code), "POST");
       res.status(200).json({ ok: true, stored: true, code: code });
     } catch (e) {
       res.status(200).json({ ok: false, reason: "backend_error" });

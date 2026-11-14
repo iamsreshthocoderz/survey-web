@@ -67,6 +67,9 @@ module.exports = async function (req, res) {
     await kvCall(url, token, "/lpush/survey:responses:" + code + "/" + val, "POST");
     await kvCall(url, token, "/ltrim/survey:responses:" + code + "/0/" + (MAX_RESPONSES - 1), "POST");
     await kvCall(url, token, "/sadd/survey:codes/" + encodeURIComponent(code), "POST");
+    /* A new submission revives the code: clear its deleted tombstone, or
+       Admin will keep filtering it out even though answers are stored. */
+    await kvCall(url, token, "/srem/survey:deleted/" + encodeURIComponent(code), "POST");
     if (body.survey && body.survey.sections) {
       var def = {
         id: body.survey.id || ("s-" + code),
